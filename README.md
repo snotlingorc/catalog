@@ -24,12 +24,7 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 ## TODO 
 
 ### Bug Fixes
-- DONE - Add image should return to the stuff that was being added.
-- DONE - add image to Edit stuff and ability to update from that page
-- add ability to remove image from stuffEdit page
-- DONE - Display images on edit page
-- DONE - add new stuff should go to edit stuff page
-- DONE - Display images on stuffView
+- None
 
 ### Items to complete
 - Tags - impliment
@@ -51,6 +46,3 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 - User signup/login - Do we need this?
 - Owner adminstration? allow multiple owners to a single item (instead of duplicate items) - perhaps users as owners?
 - Rating System??
-
-
-
