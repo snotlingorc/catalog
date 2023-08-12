@@ -1,0 +1,16 @@
+<?php 
+// DB credentials.
+$servername = "localhost";
+$username = "catalog";
+$password = "XXXXX";
+// Establish database connection.
+try
+{
+    $pdo = new PDO("mysql:host=$servername;dbname=catalog", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e)
+{
+    exit("Error: " . $e->getMessage());
+}
+?>

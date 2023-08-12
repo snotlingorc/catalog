@@ -5,7 +5,11 @@ Description goes here
 ## Setup and Installation
 
 ### Database Setup
-Create database called "catalog" with the same username.
+Create database called "catalog" with the same username
+
+Copy source/include/config.php-orig to source/include/config.php
+Edit the config.php file and enter the database username, password, etc
+
 
 
 ## Credits
