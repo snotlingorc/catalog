@@ -51,7 +51,7 @@ if (isset($_GET['id'])) {
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <tr><td width=200>
-                    <img src=/catalog/imageView.php?id=<?php echo $_GET['id']; ?>>
+                    <img src=/catalog/imageView.php?id=<?php echo getFirstImageIDByStuff($_GET['id']);?>>
     </td>
     <td>
                     <b>Author:</b>    <a href=browseby.php?type=author&id=<?php echo $result->AuthorId;?>><?php echo htmlentities(getAuthor($result->AuthorId));?></a> <br>
@@ -64,8 +64,23 @@ if (isset($_GET['id'])) {
     <tr><td colspan=2>
                     <?php echo htmlentities($result->Description);?>
     </td>
-</tr></table>
+</tr>
+</table>
             </div>
+            <div class="row">
+<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3"">
+<div class="panel panel-info">
+<div class="panel-heading">
+Associated Images
+</div>
+<div class="panel-body">
+<?php $results = getAllImagesByStuff($_GET['id']); foreach ($results as $result) {  ?>
+    <img src=/catalog/imageView.php?id=<?php echo intval($result->id); ?>>
+<?php } ?>
+</div>
+</div>
+</div>
+
         </div>
         <?php  } ?>
     </div>

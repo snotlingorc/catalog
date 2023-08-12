@@ -66,7 +66,7 @@ if(strlen($_SESSION['alogin'])==0) {
 
         newImage($id, $imgType, $imgData);
         $_SESSION['updatemsg']="Image added successfully";
-        header('location:stuffManage.php');
+        header('location:stuffEdit.php?id='.$id);
     }  else if (isset($_POST['url'])) {
             $imgType = exif_imagetype($_POST['url']);
             $source_properties = getimagesize($_POST['url']);
@@ -97,7 +97,7 @@ if(strlen($_SESSION['alogin'])==0) {
 
         newImage($id, $source_properties[mime], $imgData);
         $_SESSION['updatemsg']="Image added successfully";
-        header('location:stuffManage.php');
+        header('location:stuffEdit.php?id='.$id);
 
     }
 ?>
@@ -145,9 +145,6 @@ if(strlen($_SESSION['alogin'])==0) {
             </div>
         </div>
     </form>
-</ts>
-<td>
-<img src=/catalog/imageView.php?id=<?php echo $_GET['id']; ?>>
 </td>
 </tr>
 </table>

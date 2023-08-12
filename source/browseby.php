@@ -73,7 +73,7 @@ if (isset($_GET['id'])) {
                     <tr>
                     <?php $count=1; $results = $getAllFunction($_GET['id']); foreach ($results as $result) { ?>
                         <td width=200><table><tr><td>
-                        <a href=stuffView.php?id=<?php echo htmlentities($result->id);?>><img src="/catalog/imageView.php?id=<?php echo htmlentities($result->id);?>"></a>
+                        <a href=stuffView.php?id=<?php echo htmlentities($result->id);?>><img src="/catalog/imageView.php?id=<?php echo getFirstImageIDByStuff($result->id);?>"></a>
                     </td></tr><tr><td>
                         <a href=stuffView.php?id=<?php echo htmlentities($result->id);?>><?php echo htmlentities($result->Title);?></a>
                     </td></tr></table>

@@ -8,6 +8,7 @@ include('../dbfunc/author.php');
 include('../dbfunc/condition.php');
 include('../dbfunc/status.php');
 include('../dbfunc/owner.php');
+include('../dbfunc/image.php');
 
 if(strlen($_SESSION['alogin'])==0) {   
     header('location:index.php');
@@ -54,7 +55,7 @@ if(strlen($_SESSION['alogin'])==0) {
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Edit Catalog Item</h4>
+                <h4 class="header-line">Edit Item</h4>
                 
                             </div>
 
@@ -180,10 +181,12 @@ foreach($results as $result)
 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3"">
 <div class="panel panel-info">
 <div class="panel-heading">
-Catalog Info
+<a href="image.php?id=<?php echo htmlentities($id);?>"><button class="btn btn-primary"><i class="fa fa-image "></i>Add Image</button></a> Click on Image to remove.
 </div>
 <div class="panel-body">
-    
+<?php $results = getAllImagesByStuff($id); foreach ($results as $result) {  ?>
+    <a href=imageManage.php?del=<?php echo intval($result->id);?>&id=<?php echo $id;?>><img src=/catalog/imageView.php?id=<?php echo intval($result->id); ?>></a>
+<?php } ?>
 </div>
 </div>
 </div>

@@ -15,6 +15,15 @@ function newImage(int $id, String $imgType, String $imgData) {
     $pdo->execute();
 }
 
+function getImage(int $id) {
+    include(__DIR__ . '/../includes/config.php');
+    $stmt = "SELECT * FROM `image` WHERE id=$id;";
+    $query = $pdo -> prepare($stmt);
+    $query->execute();
+    $results = $query->fetchAll(PDO::FETCH_OBJ);
+    return $results;
+}
+
 function getFirstImageByStuff(int $id) {
     include(__DIR__ . '/../includes/config.php');
     $stmt = "SELECT * FROM `image` WHERE stuffId=$id LIMIT 1;";
@@ -24,6 +33,34 @@ function getFirstImageByStuff(int $id) {
     return $results;
 }
 
-// TODO update image
+function getFirstImageIDByStuff(int $id) {
+    include(__DIR__ . '/../includes/config.php');
+    $stmt = "SELECT id FROM `image` WHERE stuffId=$id LIMIT 1;";
+    $query = $pdo -> prepare($stmt);
+    $query->execute();
+    $results = $query->fetchAll(PDO::FETCH_OBJ);
+    if($query->rowCount() > 0) {
+        foreach($results as $result) {
+            $value = htmlentities($result->id);
+        }
+    } 
+    return $value;
+}
 
-// TODO revove image
+function getAllImagesByStuff(int $id) {
+    include(__DIR__ . '/../includes/config.php');
+    $stmt = "SELECT * FROM `image` WHERE stuffId=$id;";
+    $query = $pdo -> prepare($stmt);
+    $query->execute();
+    $results = $query->fetchAll(PDO::FETCH_OBJ);
+    return $results;
+}
+
+function delImage(int $id) {
+    include(__DIR__ . '/../includes/config.php');
+    $stmt = "DELETE FROM `image` WHERE id=$id;";
+    $query = $pdo -> prepare($stmt);
+    $query->execute();
+}
+
+// TODO update image

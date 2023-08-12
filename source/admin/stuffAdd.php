@@ -24,10 +24,10 @@ if(strlen($_SESSION['alogin'])==0) {
         $lastInsertId = newStuff($title, $catID, $AuthorID, $ConditionID, $StatusID, $OwnerID, $Description);
         if($lastInsertId) {
             $_SESSION['msg']="Stuff Listed successfully";
-            header('location:stuffManage.php');
+            header('location:stuffEdit.php?id='.$lastInsertId);
         } else {
             $_SESSION['error']="Something went wrong. Please try again";
-            header('location:stuffManage.php');
+            header('location:stuffEdit.php?id='.$lastInsertId);
         } 
 
     }

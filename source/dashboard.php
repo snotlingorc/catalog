@@ -8,7 +8,7 @@ include('dbfunc/condition.php');
 include('dbfunc/status.php');
 include('dbfunc/author.php');
 include('dbfunc/tags.php');
-
+include('dbfunc/image.php');
 
 ?>
 <!DOCTYPE html>
@@ -46,9 +46,9 @@ include('dbfunc/tags.php');
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <tr>
-                    <?php $count=1; $results = getAllSTuff(); foreach ($results as $result) { ?>
+                    <?php $count=1; $results = getAllStuff(); foreach ($results as $result) { ?>
                         <td width=200><table><tr><td>
-                        <a href=stuffView.php?id=<?php echo htmlentities($result->id);?>><img src="/catalog/imageView.php?id=<?php echo htmlentities($result->id);?>"></a>
+                        <a href=stuffView.php?id=<?php echo htmlentities($result->id);?>><img src="/catalog/imageView.php?id=<?php echo getFirstImageIDByStuff($result->id);?>"></a>
                     </td></tr><tr><td>
                         <a href=stuffView.php?id=<?php echo htmlentities($result->id);?>><?php echo htmlentities($result->Title);?></a>
                     </td></tr></table>
