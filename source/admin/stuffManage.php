@@ -145,7 +145,6 @@ foreach($results as $result)
                                             <td class="center">
 
                                             <a href="stuffEdit.php?id=<?php echo htmlentities($result->id);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 
-                                            <a href="image.php?id=<?php echo htmlentities($result->id);?>"><button class="btn btn-primary"><i class="fa fa-image "></i> Image</button> 
                                             <a href="stuffManage.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');"" >  <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
                                             </td>
                                         </tr>
