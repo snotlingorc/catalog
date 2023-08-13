@@ -72,7 +72,7 @@ return true;
 
 <body>
     <!------MENU SECTION START-->
-<?php include('../includes/header.php');?>
+<?php include('header.php');?>
 <!-- MENU SECTION END-->
 <div class="content-wrapper">
 <div class="container">
