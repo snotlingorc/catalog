@@ -63,4 +63,11 @@ function delImage(int $id) {
     $query->execute();
 }
 
+function delImageByStuff(int $id) {
+    include(__DIR__ . '/../includes/config.php');
+    $stmt = "DELETE FROM `image` WHERE stuffId=$id;";
+    $query = $pdo -> prepare($stmt);
+    $query->execute();
+}
+
 // TODO update image

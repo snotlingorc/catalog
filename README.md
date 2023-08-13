@@ -29,8 +29,6 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 ### Items to complete
 - Tags - impliment
     dbfunc/stuff.php - Do not forget to delete the tagAssociation for StuffID
-- Image removal/update
-    dbfunc/stuff.php - Do not forget to delete the image associated with this StuffID
 - Admin - Logout, change password, index.php page
 - CSS work - see if the css will allow for dynamic build of the table instead of forcing 5 cells wide
 - Logo
@@ -41,7 +39,7 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 ### Feature Requests
 - dbfund/image.php - figure out why this cannot be in the same format as the other DB calls
 - Multi Image support - Ability to select primary image - perhaps rotate the various images
-- Additional image types. Currently on png, gif and jpg are valid.
+- Additional image types. Currently on png, gif and jpg are valid.  webp is pretty common.
 - Image from url - Need to move this to a function and add in some better error checking
 - User signup/login - Do we need this?
 - Owner adminstration? allow multiple owners to a single item (instead of duplicate items) - perhaps users as owners?

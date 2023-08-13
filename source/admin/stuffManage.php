@@ -8,6 +8,7 @@ include('../dbfunc/author.php');
 include('../dbfunc/condition.php');
 include('../dbfunc/status.php');
 include('../dbfunc/owner.php');
+include('../dbfunc/image.php');
 
 if(strlen($_SESSION['alogin'])==0) {   
     header('location:index.php');
@@ -15,6 +16,7 @@ if(strlen($_SESSION['alogin'])==0) {
     if(isset($_GET['del'])) {
         $id=$_GET['del'];
         delStuff($id);
+        delImageByStuff($id);
         $_SESSION['delmsg']="Stuff deleted scuccessfully ";
         header('location:stuffManage.php');
     }
