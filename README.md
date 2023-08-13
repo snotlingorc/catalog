@@ -27,8 +27,6 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 - None
 
 ### Items to complete
-- Tags - impliment
-    dbfunc/stuff.php - Do not forget to delete the tagAssociation for StuffID
 - Admin - Logout, change password, index.php page
 - CSS work - see if the css will allow for dynamic build of the table instead of forcing 5 cells wide
 - Logo
