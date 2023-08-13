@@ -11,7 +11,7 @@ include('../dbfunc/owner.php');
 include('../dbfunc/image.php');
 
 if(strlen($_SESSION['alogin'])==0) {   
-    header('location:index.php');
+    header('location:../adminlogin.php');
 } else { 
     if(isset($_POST['update'])) {
         $id=intval($_GET['id']);

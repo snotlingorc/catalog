@@ -12,17 +12,16 @@ if(isset($_POST['login']))
  //code for captach verification
 if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
         echo "<script>alert('Incorrect verification code');</script>" ;
-    } 
-        else {
-            $result=adminLogin($_POST['username'], $_POST['password']);
-            if($result > 0) {
-                $_SESSION['alogin']=$_POST['username'];
-                echo "<script type='text/javascript'> document.location ='admin/dashboard.php'; </script>";
-            } else{
-                echo "<script>alert('Invalid Details');</script>";
-            }
-        }       
-    }
+    } else {
+        $result=adminLogin($_POST['username'], md5($_POST['password']));
+        if($result > 0) {
+            $_SESSION['alogin']=$_POST['username'];
+            echo "<script type='text/javascript'> document.location ='admin/dashboard.php'; </script>";
+        } else {
+            echo "<script>alert('Invalid Details');</script>";
+        }
+    }       
+}
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

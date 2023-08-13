@@ -13,7 +13,7 @@ include('../dbfunc/tagassociation.php');
 
 
 if(strlen($_SESSION['alogin'])==0) {   
-    header('location:index.php');
+    header('location:../adminlogin.php');
 } else { 
     if(isset($_GET['del'])) {
         $id=$_GET['del'];

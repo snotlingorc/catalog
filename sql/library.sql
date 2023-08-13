@@ -221,7 +221,7 @@ CREATE TABLE `administrator` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `administrator` (`id`, `Name`, `Email`, `UserName`, `Password`, `UpdateDate`) VALUES
-(1, 'Snotling', 'snotling@gmail.com', 'admin', 'testpassword', '2023-07-22 12:00:00');
+(1, 'Your Name', 'email@address.com', 'admin', 'e16b2ab8d12314bf4efbd6203906ea6c', '2023-07-22 12:00:00');
 
 ALTER TABLE `administrator`
   ADD PRIMARY KEY (`id`);

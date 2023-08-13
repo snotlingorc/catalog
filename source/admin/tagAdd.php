@@ -4,7 +4,7 @@ error_reporting(1);
 include('../includes/config.php');
 include('../dbfunc/tags.php');
 if(strlen($_SESSION['alogin'])==0) {   
-    header('location:index.php');
+    header('location:../adminlogin.php');
 } else { 
     if(isset($_POST['create'])) {
         $name=$_POST['tag'];

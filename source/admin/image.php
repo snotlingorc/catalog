@@ -27,7 +27,7 @@ function fn_resize($image_resource_id, $origWidth, $origHeight)
 
 
 if(strlen($_SESSION['alogin'])==0) {   
-    header('location:index.php');
+    header('location:../adminlogin.php');
 } else { 
     if(isset($_POST['create'])) {
         if (count($_FILES) > 0) {

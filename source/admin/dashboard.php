@@ -13,7 +13,7 @@ include('../dbfunc/owner.php');
 
 if(strlen($_SESSION['alogin'])==0)
   { 
-header('location:index.php');
+header('location:../adminlogin.php');
 }
 else{?>
 <!DOCTYPE html>
