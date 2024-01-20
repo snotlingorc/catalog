@@ -73,8 +73,8 @@ CREATE TABLE `authors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `authors` (`id`, `Name`, `URL`, `creationDate`, `UpdateDate`) VALUES
-(1, 'Games Workshop', 'https://www.games-workshop.com/en-US/Home', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(2, 'Paizo', 'https://paizo.com/', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(1, 'Paizo', 'https://paizo.com/', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(2, 'Games Workshop', 'https://www.games-workshop.com/en-US/Home', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (3, 'Wizards of the Cost', 'https://dnd.wizards.com/', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 ALTER TABLE `authors`

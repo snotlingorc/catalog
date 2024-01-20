@@ -11,7 +11,7 @@ A catalog/library type system to catalog your "stuff". This is designed to catal
 Create database called "catalog" with the same username
 once created, use the sql/library.sql file to populate the database with some default values.
 
-Copy source/include/config.php-orig to source/include/config.php
+Copy source/includes/config.php-orig to source/includes/config.php
 Edit the config.php file and enter the database username, password, etc
 
 ## Logging in
