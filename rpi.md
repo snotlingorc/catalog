@@ -49,8 +49,9 @@ sudo ln -s ~/catalog/source/ catalog
 
 cd catalog/includes
 sudo cp config.php-orig config.php
-edit he password line to match your password that you entered into the previous step.
-
+edit the password line to match your password that you entered into the previous step.
+cd ../dbfunc
+edit image.php and update the password here as well.
 
 Next, populate the tables
 from the phpmyadmin console, click on "catalog" from the left hand menu

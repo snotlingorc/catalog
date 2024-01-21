@@ -42,4 +42,6 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 - Image from url - Need to move this to a function and add in some better error checking and gracefully error out if invalid type
 - User signup/login - Do we need this? (google login/Oauth support?)
 - Owner adminstration? allow multiple owners to a single item (instead of duplicate items) - perhaps users as owners?
+-- move owner to it's own table
 - Rating System??
+- date field for publications
