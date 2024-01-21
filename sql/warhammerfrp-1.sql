@@ -10,7 +10,7 @@ INSERT INTO `authors` (`id`, `Name`, `URL`, `creationDate`, `UpdateDate`) VALUES
 
 --
 --  Stuff Addition from the Original GW Line
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `Description`, `ISBN`, `Date`, `CreationDate`, `UpdateDate`) VALUES
 (3, 'WHFRP RuleBook', 1, 2, 1, 1, 1, 'main rulebook, hardback', '1-869893-02-6', '1986-10-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (4, 'WHFRP RuleBook', 1, 2, 1, 1, 1, 'main rulebook republished as a softback with minor corrections', '', '1989-02-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (5, 'The Enemy Within', 1, 2, 1, 1, 1, 'campaign supplement', '1-869893-04-2', '1986-04-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
@@ -31,7 +31,7 @@ INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusI
 (20, 'Realm of Chaos: The Lost and the Damned', 1, 2, 1, 1, 1, '2nd volume of the joint WFRP/WFB/WH40K supplement, hardback', '1-869893-52-2', '1989-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 --  Stuff Addition from Flame Publications
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `Description`, `ISBN`, `Date`, `CreationDate`, `UpdateDate`) VALUES
 (21, 'Fire in the Mountians', 1, 4, 1, 1, 1, 'The Doomstones Campaign part 1', '1-872372-14-7', '1990-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (22, 'Lichemaster', 1, 4, 1, 1, 1, 'a redesigned scenario pack from the second edition of Warhammer Fantasy Battle', '1-872372-01-5', '1990-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (23, 'Blood in Darkness', 1, 4, 1, 1, 1, 'The Doomstones Campaign part 2', '1-872372-23-6', '1990-10-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
@@ -44,7 +44,7 @@ INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusI
 (30, 'Character Pack 2nd', 1, 4, 1, 1, 1, '2nd printing – 2nd edition of the character pack, not the game as a whole', '', '1992-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 --  Stuff Addition from Hogshead Publishing
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `Description`, `ISBN`, `Date`, `CreationDate`, `UpdateDate`) VALUES
 (31, 'Warhammer Fantasy Roleplay', 1, 5, 1, 1, 1, 'softcover reprint', '1-899749-01-2', '1995-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (32, 'The Enemy Within Campaign volume 1: Shadows over Bögenhafen', 1, 5, 1, 1, 1, 'reprint of Warhammer Campaign', '1-899749-02-0', '1995-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (33, 'Apocrypha Now', 1, 5, 1, 1, 1, 'additional rules', '1-899749-03-9', '1995-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
@@ -63,6 +63,8 @@ INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusI
 (46, 'Realms of Sorcery', 1, 5, 1, 1, 1, 'magic sourcebook', '1-899749-33-0', '2001-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (47, 'Corrupting Influence: The Best of Warpstone', 1, 5, 1, 1, 1, 'compilation of articles from Warpstone magazine', '1-899749-34-9', 'Mar 25 2002', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (48, 'Dwarfs: Stone and Steel', 1, 5, 1, 1, 1, 'Dwarf sourcebook', '1-899749-28-4', '2002-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
+(49, 'Fear the Worst', 1, 5, 1, 1, 1, 'PDF only, free adventure as a so long and thank you', '', '2002-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(50, 'Bad Tidings', 1, 5, 1, 1, 1, 'PDF version of the adventure in Hogwash 4', '', '2002-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 
 -- Images

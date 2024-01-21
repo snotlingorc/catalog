@@ -162,12 +162,12 @@ foreach($results as $result)
 
 <div class="form-group">
 <label>ISBN</label>
-<input class="form-control" type="text" name="ISBN" value="<?php echo htmlentities($result->ISBN);?>" maxlength="50" required />
+<input class="form-control" type="text" name="ISBN" value="<?php echo htmlentities($result->ISBN);?>" maxlength="50" />
 </div>
 
 <div class="form-group">
 <label>Publish Date</label>
-<input class="form-control" type="text" name="Date" value="<?php echo htmlentities($result->Date);?>" maxlength="50" required />
+<input class="form-control" type="text" name="Date" value="<?php echo htmlentities($result->Date);?>" maxlength="50" />
 </div>
 
 
