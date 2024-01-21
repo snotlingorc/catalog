@@ -22,8 +22,10 @@ if(strlen($_SESSION['alogin'])==0) {
         $StatusID=intval($_POST['StatusId']);
         $OwnerID=intval($_POST['OwnerId']);
         $Description=$_POST['Description'];
+        $ISBN=$_POST['ISBN'];
+        $Date=$_POST['Date'];
 
-        updateStuff($id, $title, $catID, $AuthorID, $ConditionID, $StatusID, $OwnerID, $Description);    
+        updateStuff($id, $title, $catID, $AuthorID, $ConditionID, $StatusID, $OwnerID, $ISBN, $Date, $Description);    
         $_SESSION['updatemsg']="Stuff updated successfully";
         header('location:stuffManage.php'); 
     }
@@ -157,6 +159,17 @@ foreach($results as $result)
 ?>
 </select>
 </div>
+
+<div class="form-group">
+<label>ISBN</label>
+<input class="form-control" type="text" name="ISBN" value="<?php echo htmlentities($result->ISBN);?>" maxlength="50" required />
+</div>
+
+<div class="form-group">
+<label>Publish Date</label>
+<input class="form-control" type="text" name="Date" value="<?php echo htmlentities($result->Date);?>" maxlength="50" required />
+</div>
+
 
 <div class="form-group">
 <label>Description</label>

@@ -28,13 +28,15 @@ function getStuff(int $id) {
     return $results;
 }
 
-function newStuff(String $title, int $catID, int $AuthorID, int $ConditionID, int $StatusID, int $OwnerID, string $Description) {
+function newStuff(String $title, int $catID, int $AuthorID, int $ConditionID, int $StatusID, int $OwnerID, string $ISBN, string $Date, string $Description) {
     include(__DIR__ . '/../includes/config.php');
     $creationDate = date("Y-m-d H:i:s");
-    $stmt = "INSERT INTO `stuff` (`Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `Description`, `CreationDate`, `UpdateDate`) VALUES
-    (:title, '$catID', '$AuthorID', '$ConditionID', '$StatusID', '$OwnerID', :desc, '$creationDate', '$creationDate')";
+    $stmt = "INSERT INTO `stuff` (`Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
+    (:title, '$catID', '$AuthorID', '$ConditionID', '$StatusID', '$OwnerID', :isbn, :date :desc, '$creationDate', '$creationDate')";
     $query = $pdo -> prepare($stmt);
     $query->bindParam(":title", $title);
+    $query->bindParam(":isbn", $ISBN);
+    $query->bindParam(":date", $Date);
     $query->bindParam(":desc", $Description);
     $query->execute();
     return $pdo->lastInsertId();
@@ -52,12 +54,14 @@ function delStuff(int $id) {
     //TODO
 }
 
-function updateStuff(int $id, String $title, int $catID, int $AuthorID, int $ConditionID, int $StatusID, int $OwnerID, string $Description) {
+function updateStuff(int $id, String $title, int $catID, int $AuthorID, int $ConditionID, int $StatusID, int $OwnerID, string $ISBN, string $Date, string $Description) {
     include(__DIR__ . '/../includes/config.php');
     $updateDate = date("Y-m-d H:i:s");
-    $stmt = "UPDATE `stuff` SET Title=:title, CatId='$catID', AuthorId='$AuthorID', ConditionId='$ConditionID', StatusId='$StatusID', OwnerId='$OwnerID', Description=:desc, UpdateDate='$updateDate' WHERE id=$id";
+    $stmt = "UPDATE `stuff` SET Title=:title, CatId='$catID', AuthorId='$AuthorID', ConditionId='$ConditionID', StatusId='$StatusID', OwnerId='$OwnerID', ISBN=:isbn, Date=:date, Description=:desc, UpdateDate='$updateDate' WHERE id=$id";
     $query = $pdo -> prepare($stmt);
     $query->bindParam(":title", $title);
+    $query->bindParam(":isbn", $ISBN);
+    $query->bindParam(":date", $Date);
     $query->bindParam(":desc", $Description);
     $query->execute();
 }

@@ -46,8 +46,8 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 - Owner adminstration? allow multiple owners to a single item (instead of duplicate items) - perhaps users as owners?
 -- move owner flags to it's own table (condition, status, owner)
 #### Stuff
-- date field for publications
-- ISBN number 
+- date field for publications - DONE
+- ISBN number - DONE
 - format (hardcover, softcover, pdf)
 - remove condition, status, owner
 #### Misc

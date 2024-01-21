@@ -20,8 +20,10 @@ if(strlen($_SESSION['alogin'])==0) {
         $StatusID=intval($_POST['StatusId']);
         $OwnerID=intval($_POST['OwnerId']);
         $Description=$_POST['Description'];
+        $ISBN=$_POST['ISBN'];
+        $Date=$_POST['Date'];
 
-        $lastInsertId = newStuff($title, $catID, $AuthorID, $ConditionID, $StatusID, $OwnerID, $Description);
+        $lastInsertId = newStuff($title, $catID, $AuthorID, $ConditionID, $StatusID, $OwnerID, $ISBN, $Date, $Description);
         if($lastInsertId) {
             $_SESSION['msg']="Stuff Listed successfully";
             header('location:stuffEdit.php?id='.$lastInsertId);
@@ -132,6 +134,15 @@ Catalog Info
 ?>
 </select>
 </div>
+<div class="form-group">
+<label>ISBN</label>
+<input class="form-control" type="text" name="ISBN" autocomplete="off" maxlength="50" required />
+</div>
+<div class="form-group">
+<label>Date</label>
+<input class="form-control" type="text" name="Date" autocomplete="off" maxlength="50" required />
+</div>
+
 <div class="form-group">
 <label>Description</label>
 <input class="form-control" type="text" name="Description" autocomplete="off" maxlength="5000" required />

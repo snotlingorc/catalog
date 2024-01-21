@@ -55,6 +55,8 @@ if (isset($_GET['id'])) {
     </td>
     <td>
                     <b>Author:</b>    <a href=browseby.php?type=author&id=<?php echo $result->AuthorId;?>><?php echo htmlentities(getAuthor($result->AuthorId));?></a> <br>
+                    <b>ISBN:</b>      <?php echo htmlentities($result->ISBN);?><br>
+                    <b>Publish Date:</b>  <?php echo htmlentities($result->Date);?><br>
                     <b>Category:</b>  <a href=browseby.php?type=category&id=<?php echo $result->CatId;?>><?php echo htmlentities(getCategory($result->CatId));?></a> <br>
                     <b>Condition:</b> <a href=browseby.php?type=condition&id=<?php echo $result->ConditionId;?>><?php echo htmlentities(getCondition($result->ConditionId));?></a> <br>
                     <b>Status:</b>    <a href=browseby.php?type=status&id=<?php echo $result->StatusId;?>><?php echo htmlentities(getStatus($result->StatusId));?></a> <br>

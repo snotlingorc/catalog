@@ -17,15 +17,17 @@ CREATE TABLE `stuff` (
   `ConditionId` int(11) DEFAULT NULL,
   `StatusId` int(11) DEFAULT NULL,
   `OwnerId` int(11) DEFAULT NULL,
+  `ISBN` varchar(50) DEFAULT NULL,
+  `Date` date NULL DEFAULT NULL,
   `Description` varchar(5000) DEFAULT NULL,
   `CreationDate` timestamp NULL DEFAULT current_timestamp(),
   `UpdateDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `Description`, `CreationDate`, `UpdateDate`) VALUES
-(1, 'Core RuleBook', 1, 1, 1, 1, 1, 'Pathfinder 2E Core Rulebook', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(2, 'Bestiary', 1, 1, 1, 1, 1, 'Pathfinder 2E Bestiary', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
+(1, 'Core RuleBook', 1, 1, 1, 1, 1, 'Pathfinder 2E Core Rulebook', '978-1-64078-169-6', '2019-08-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(2, 'Bestiary', 1, 1, 1, 1, 1, 'Pathfinder 2E Bestiary', '978-1-64078-170-2', '2019-08-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 ALTER TABLE `stuff`
   ADD PRIMARY KEY (`id`);
