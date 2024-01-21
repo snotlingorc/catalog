@@ -24,6 +24,9 @@ if(strlen($_SESSION['alogin'])==0) {
         $Description=$_POST['Description'];
         $ISBN=$_POST['ISBN'];
         $Date=$_POST['Date'];
+        if($Date=="") {
+            $Date = "0000-00-00";
+        }
 
         updateStuff($id, $title, $catID, $AuthorID, $ConditionID, $StatusID, $OwnerID, $ISBN, $Date, $Description);    
         $_SESSION['updatemsg']="Stuff updated successfully";

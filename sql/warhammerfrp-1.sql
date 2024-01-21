@@ -23,7 +23,7 @@ INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusI
 (12, 'Death on the Reik', 1, 2, 1, 1, 1, 'republished as a hardback', '', '1988-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (13, 'Warhammer Campaign', 1, 2, 1, 1, 1, 'hardback collection of The Enemy Within and Shadows over Bögenhafen', '', '1988-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (14, 'Something Rotten in Kislev', 1, 2, 1, 1, 1, 'fifth part of The Enemy Within campaign', '1-869893-56-5', '1988-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(15, 'Relam of Chains: Slaves to Darkness', 1, 2, 1, 1, 1, 'first of the two Realm of Chaos volumes, joint WFRP/WFB/WH40K hardback supplement', '1-869893-51-4', '1988-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(15, 'Relam of Chaos: Slaves to Darkness', 1, 2, 1, 1, 1, 'first of the two Realm of Chaos volumes, joint WFRP/WFB/WH40K hardback supplement', '1-869893-51-4', '1988-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (16, 'The Restless Dead', 1, 2, 1, 1, 1, 'collection of scenarios previous published in White Dwarf magazine', '1-869893-73-5', '1989-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (17, 'Warhammer Adventure', 1, 2, 1, 1, 1, 'collection of the first three parts of The Enemy Within campaign', '1-872372-22-8', '1989-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (18, 'Warhammer City of Chaos', 1, 2, 1, 1, 1, 'collection of Warhammer City and Power Behind the Throne', '1-872372-41-4)', '1989-12-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
