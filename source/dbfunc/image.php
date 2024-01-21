@@ -6,7 +6,7 @@ function newImage(int $id, String $imgType, String $imgData) {
     // TODO figure out why this cannot be in the same format as the other DB calls
    // include(__DIR__ . '/../includes/config.php');
 
-    $conn = mysqli_connect("localhost", "catalog", "541SEwAKZ3k7sxc3", "catalog");
+    $conn = mysqli_connect("localhost", "catalog", "yourpasswordhere", "catalog");
 
     $sql = "INSERT INTO image(imageType ,imageData, stuffId) VALUES(?, ?, $id)";
     $pdo = $conn->prepare($sql);
