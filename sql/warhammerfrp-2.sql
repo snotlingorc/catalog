@@ -16,16 +16,16 @@ INSERT INTO `tags` (`id`, `Name`, `CreationDate`, `UpdateDate`) VALUES
 (13, 'Warhammer FRP 4th edition', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 --  Stuff Addition from Black Industires, 2nd edition of whfrp
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `Description`, `CreationDate`, `UpdateDate`) VALUES
-(3, 'Apocrypha Now', 1, 6, 1, 1, 1, 'additional rules, 1995', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
+(3, 'Apocrypha Now', 1, 6, 1, 1, 1, 'additional rules', '', '1995-01-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 
 --  Stuff Addition from Fantasy Flight Games, 2nd edition of whfrp
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `Description`, `CreationDate`, `UpdateDate`) VALUES
-(3, 'Apocrypha Now', 1, 6, 1, 1, 1, 'additional rules, 1995', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
+(3, 'Apocrypha Now', 1, 6, 1, 1, 1, 'additional rules', '', '1995-01-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 
 --  Stuff Addition from Cubicle 7, 4th edition of whfrp
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `Description`, `CreationDate`, `UpdateDate`) VALUES
-(3, 'Apocrypha Now', 1, 6, 1, 1, 1, 'additional rules, 1995', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
+(3, 'Apocrypha Now', 1, 6, 1, 1, 1, 'additional rules', '', '1995-01-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 
 
 -- Images
