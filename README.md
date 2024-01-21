@@ -36,12 +36,19 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 - stuffView look and feel need to match the rest
 
 ### Feature Requests
+#### Images
 - dbfunc/image.php - figure out why this cannot be in the same format as the other DB calls
 - Multi Image support - Ability to select primary image - perhaps rotate the various images
 - Additional image types. Currently on png, gif and jpg are valid.  webp is pretty common.
 - Image from url - Need to move this to a function and add in some better error checking and gracefully error out if invalid type
+#### Owner
 - User signup/login - Do we need this? (google login/Oauth support?)
 - Owner adminstration? allow multiple owners to a single item (instead of duplicate items) - perhaps users as owners?
--- move owner to it's own table
-- Rating System??
+-- move owner flags to it's own table (condition, status, owner)
+#### Stuff
 - date field for publications
+- ISBN number 
+- format (hardcover, softcover, pdf)
+- remove condition, status, owner
+#### Misc
+- Rating System??
