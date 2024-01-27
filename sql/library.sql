@@ -172,10 +172,10 @@ INSERT INTO `format` (`id`, `Name`, `CreationDate`, `UpdateDate`) VALUES
 (3, 'PDF', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (4, 'Box Set', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
-ALTER TABLE `status`
+ALTER TABLE `format`
   ADD PRIMARY KEY (`id`);
 
-ALTER TABLE `status`
+ALTER TABLE `format`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
@@ -197,6 +197,27 @@ ALTER TABLE `owner`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `owner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+CREATE TABLE `ownerAssociation` (
+  `id` int(11) NOT NULL,
+  `stuffid` int(11) NOT NULL,
+  `ownerid` int(11) NOT NULL,
+  `formatid` int(11) NOT NULL,
+  `statusid` int(11) NOT NULL,
+  `conditionid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `ownerAssociation` (`id`, `stuffid`, `ownerid`, `formatid`, `statusid`, `conditionid`) VALUES
+(1, 1, 1, 1, 1, 2),
+(2, 1, 1, 3, 1, 1),
+(3, 2, 1, 1, 1, 2),
+(5, 2, 1, 3, 1, 2);
+
+ALTER TABLE `ownerAssociation`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `ownerAssociation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
