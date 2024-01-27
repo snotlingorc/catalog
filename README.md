@@ -50,5 +50,7 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 - ISBN number - DONE
 - format (hardcover, softcover, pdf)
 - remove condition, status, owner
+- add publisher (what author is currently used as)
+- add product line - would that replace the tags?
 #### Misc
 - Rating System??
