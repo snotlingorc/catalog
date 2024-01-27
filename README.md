@@ -4,6 +4,8 @@ A catalog/library type system to catalog your "stuff". This is designed to catal
 
 ## Setup and Installation
 
+Please see <a href=rpi.md>rpi.md</a> for instructions on setting it up on a Raspberry Pi type device
+
 ### What you need
  PHP, Mysql
 
@@ -46,10 +48,6 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 - Owner adminstration? allow multiple owners to a single item (instead of duplicate items) - perhaps users as owners?
 -- move owner flags to it's own table (condition, status, owner)
 #### Stuff
-- date field for publications - DONE
-- ISBN number - DONE
-- remove condition, status, owner - DONE
-- add publisher (what author is currently used as) - DONE
 - format (hardcover, softcover, pdf) - In Progress
 - add product line - would that replace the tags?
 #### Misc
