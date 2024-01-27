@@ -7,6 +7,7 @@ include('../dbfunc/category.php');
 include('../dbfunc/author.php');
 include('../dbfunc/publisher.php');
 include('../dbfunc/condition.php');
+include('../dbfunc/format.php');
 include('../dbfunc/status.php');
 include('../dbfunc/tags.php');
 include('../dbfunc/owner.php');
@@ -50,6 +51,7 @@ A little bit about our current catalog:
 <li> Number of Publishers : <?php echo getPublisherCount(); ?> </li>
 <li> Number of Authors : <?php echo getAuthorCount(); ?> </li>
 <li> Number of Conditions : <?php echo getConditionCount(); ?> </li>
+<li> Number of Formats : <?php echo getFormatCount(); ?> </li>
 <li> Number of Status : <?php echo getStatusCount(); ?> </li>
 <li> Number of tags : <?php echo getTagCount(); ?> </li>
 <li> Number of Owners : <?php echo getOwnerCount(); ?> </li>

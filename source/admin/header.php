@@ -56,7 +56,14 @@
                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="authorManage.php">Manage Authors</a></li>
                                 </ul>
                             </li>
- <li>
+                            <li>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Format <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="formatAdd.php">Add Format</a></li>
+                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="formatManage.php">Manage Format</a></li>
+                                </ul>
+                            </li>
+                            <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Condition <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="conditionAdd.php">Add Condition</a></li>

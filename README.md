@@ -48,9 +48,9 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 #### Stuff
 - date field for publications - DONE
 - ISBN number - DONE
-- format (hardcover, softcover, pdf)
 - remove condition, status, owner - DONE
 - add publisher (what author is currently used as) - DONE
+- format (hardcover, softcover, pdf) - In Progress
 - add product line - would that replace the tags?
 #### Misc
 - Rating System??

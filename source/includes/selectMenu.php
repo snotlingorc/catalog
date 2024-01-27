@@ -35,7 +35,20 @@
                                         <?php } ?>
                                 </ul>
                             </li>
- <li>
+                            <!--
+                            <li>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Formats <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                                <?php $Results=getAllFormat();
+                                    foreach($Results as $result) { ?>
+                                           <li role="presentation"><a role="menuitem" tabindex="-1" href="browseby.php?type=format&id=<?php echo $result->id; ?>"><?php echo htmlentities(getFormat($result->id)); ?></a></li>
+                                        <?php } ?>
+
+                                </ul>
+                            </li>
+                                    -->
+                            <!--
+                            <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Condition <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                 <?php $Results=getAllCondition();
@@ -45,6 +58,8 @@
 
                                 </ul>
                             </li>
+                                    -->
+                            <!--
                            <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Status <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
@@ -55,6 +70,7 @@
 
                                 </ul>
                             </li>
+                                    -->
                         </ul>
                     </div>
                 </div>
