@@ -14,9 +14,7 @@ CREATE TABLE `stuff` (
   `Title` varchar(255) DEFAULT NULL,
   `CatId` int(11) DEFAULT NULL,
   `AuthorId` int(11) DEFAULT NULL,
-  `ConditionId` int(11) DEFAULT NULL,
-  `StatusId` int(11) DEFAULT NULL,
-  `OwnerId` int(11) DEFAULT NULL,
+  `PublisherId` int(11) DEFAULT NULL,
   `ISBN` varchar(50) DEFAULT NULL,
   `Date` date NULL DEFAULT NULL,
   `Description` varchar(5000) DEFAULT NULL,
@@ -25,9 +23,9 @@ CREATE TABLE `stuff` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
-(1, 'Core RuleBook', 1, 1, 1, 1, 1, 'Pathfinder 2E Core Rulebook', '978-1-64078-169-6', '2019-08-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(2, 'Bestiary', 1, 1, 1, 1, 1, 'Pathfinder 2E Bestiary', '978-1-64078-170-2', '2019-08-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `PublisherId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
+(1, 'Core RuleBook', 1, 1, 1, 'Pathfinder 2E Core Rulebook', '978-1-64078-169-6', '2019-08-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(2, 'Bestiary', 1, 1, 1, 'Pathfinder 2E Bestiary', '978-1-64078-170-2', '2019-08-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 ALTER TABLE `stuff`
   ADD PRIMARY KEY (`id`);
@@ -75,14 +73,37 @@ CREATE TABLE `authors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `authors` (`id`, `Name`, `URL`, `creationDate`, `UpdateDate`) VALUES
-(1, 'Paizo', 'https://paizo.com/', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(2, 'Games Workshop', 'https://www.games-workshop.com/en-US/Home', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(3, 'Wizards of the Cost', 'https://dnd.wizards.com/', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
+(1, 'me', 'https://localhost/', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
+
 
 ALTER TABLE `authors`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `authors`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+-- --------------------------------------------------------
+--
+-- Table structure for table `publisher`
+--
+
+CREATE TABLE `publishers` (
+  `id` int(11) NOT NULL,
+  `Name` varchar(159) DEFAULT NULL,
+  `URL` varchar(159) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp(),
+  `UpdateDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `publishers` (`id`, `Name`, `URL`, `creationDate`, `UpdateDate`) VALUES
+(1, 'Paizo', 'https://paizo.com/', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(2, 'Games Workshop', 'https://www.games-workshop.com/en-US/Home', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(3, 'Wizards of the Cost', 'https://dnd.wizards.com/', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
+
+ALTER TABLE `publishers`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `publishers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
@@ -126,6 +147,30 @@ INSERT INTO `status` (`id`, `Name`, `CreationDate`, `UpdateDate`) VALUES
 (1, 'Have', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (2, 'Want', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (3, 'Ordered', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
+
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+-- --------------------------------------------------------
+--
+-- Table structure for table `status`
+--
+
+CREATE TABLE `format` (
+  `id` int(11) NOT NULL,
+  `Name` varchar(159) DEFAULT NULL,
+  `creationDate` timestamp NULL DEFAULT current_timestamp(),
+  `UpdateDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `format` (`id`, `Name`, `CreationDate`, `UpdateDate`) VALUES
+(1, 'Hardcover', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(2, 'Softsover', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(3, 'PDF', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(4, 'Box Set', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id`);

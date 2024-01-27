@@ -5,6 +5,7 @@ include('includes/config.php');
 include('../dbfunc/stuff.php');
 include('../dbfunc/category.php');
 include('../dbfunc/author.php');
+include('../dbfunc/publisher.php');
 include('../dbfunc/condition.php');
 include('../dbfunc/status.php');
 include('../dbfunc/tags.php');
@@ -46,6 +47,7 @@ A little bit about our current catalog:
 <ul>
 <li> Number of objects : <?php echo getStuffCount(); ?> </li>
 <li> Number of Categories : <?php echo getCategoryCount(); ?> </li>
+<li> Number of Publishers : <?php echo getPublisherCount(); ?> </li>
 <li> Number of Authors : <?php echo getAuthorCount(); ?> </li>
 <li> Number of Conditions : <?php echo getConditionCount(); ?> </li>
 <li> Number of Status : <?php echo getStatusCount(); ?> </li>

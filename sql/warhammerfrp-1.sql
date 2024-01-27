@@ -4,67 +4,67 @@
 -- --------------------------------------------------------
 --
 -- Author additions
-INSERT INTO `authors` (`id`, `Name`, `URL`, `creationDate`, `UpdateDate`) VALUES
+INSERT INTO `publishers` (`id`, `Name`, `URL`, `creationDate`, `UpdateDate`) VALUES
 (4, 'Flame Publications', 'https://rpggeek.com/rpgpublisher/9643/flame-publications', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(5, 'Hogshead Publishing', 'https://en.wikipedia.org/wiki/Hogshead_Publishing', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(5, 'Hogshead Publishing', 'https://en.wikipedia.org/wiki/Hogshead_Publishing', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 --
 --  Stuff Addition from the Original GW Line
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `Description`, `ISBN`, `Date`, `CreationDate`, `UpdateDate`) VALUES
-(3, 'WHFRP RuleBook', 1, 2, 1, 1, 1, 'main rulebook, hardback', '1-869893-02-6', '1986-10-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(4, 'WHFRP RuleBook', 1, 2, 1, 1, 1, 'main rulebook republished as a softback with minor corrections', '', '1989-02-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(5, 'The Enemy Within', 1, 2, 1, 1, 1, 'campaign supplement', '1-869893-04-2', '1986-04-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(6, 'Dungon Rooms and Dungeon Lairs', 1, 2, 1, 1, 1, 'boxed floorplan sets', '', '1986-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(7, 'Character Pack', 1, 2, 1, 1, 1, '1st edition, expanded rules for character generation', '', '1987-02-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(8, 'Shadows Over Boegenhafen', 1, 2, 1, 1, 1, 'second part of The Enemy Within Campaign', '1-869893-07-7', '1987-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(9, 'Death on the Reik', 1, 2, 1, 1, 1, 'boxed edition, third part of The Enemy Within campaign', '1-869893-10-7', '1987-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(10, 'Warhammer City', 1, 2, 1, 1, 1, 'Middenheim sourcebook', '1-869893-24-7', '1987-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(11, 'Power Behind the Throne', 1, 2, 1, 1, 1, 'fourth part of The Enemy Within campaign', '1-869893-43-3', '1988-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(12, 'Death on the Reik', 1, 2, 1, 1, 1, 'republished as a hardback', '', '1988-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(13, 'Warhammer Campaign', 1, 2, 1, 1, 1, 'hardback collection of The Enemy Within and Shadows over Bögenhafen', '', '1988-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(14, 'Something Rotten in Kislev', 1, 2, 1, 1, 1, 'fifth part of The Enemy Within campaign', '1-869893-56-5', '1988-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(15, 'Relam of Chaos: Slaves to Darkness', 1, 2, 1, 1, 1, 'first of the two Realm of Chaos volumes, joint WFRP/WFB/WH40K hardback supplement', '1-869893-51-4', '1988-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(16, 'The Restless Dead', 1, 2, 1, 1, 1, 'collection of scenarios previous published in White Dwarf magazine', '1-869893-73-5', '1989-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(17, 'Warhammer Adventure', 1, 2, 1, 1, 1, 'collection of the first three parts of The Enemy Within campaign', '1-872372-22-8', '1989-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(18, 'Warhammer City of Chaos', 1, 2, 1, 1, 1, 'collection of Warhammer City and Power Behind the Throne', '1-872372-41-4)', '1989-12-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(19, 'The Empire in Flames', 1, 2, 1, 1, 1, 'sixth part of the Enemy Within Campaign', '1-872372-08-2', '1989-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(20, 'Realm of Chaos: The Lost and the Damned', 1, 2, 1, 1, 1, '2nd volume of the joint WFRP/WFB/WH40K supplement, hardback', '1-869893-52-2', '1989-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `PublisherId`, `Description`, `ISBN`, `Date`, `CreationDate`, `UpdateDate`) VALUES
+(3, 'WHFRP RuleBook', 1, 2, 2, 'main rulebook, hardback', '1-869893-02-6', '1986-10-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(4, 'WHFRP RuleBook', 1, 2, 2, 'main rulebook republished as a softback with minor corrections', '', '1989-02-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(5, 'The Enemy Within', 1, 2, 2, 'campaign supplement', '1-869893-04-2', '1986-04-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(6, 'Dungon Rooms and Dungeon Lairs', 1, 2, 2, 'boxed floorplan sets', '', '1986-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(7, 'Character Pack', 1, 2, 2, '1st edition, expanded rules for character generation', '', '1987-02-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(8, 'Shadows Over Boegenhafen', 1, 2, 2, 'second part of The Enemy Within Campaign', '1-869893-07-7', '1987-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(9, 'Death on the Reik', 1, 2, 2, 'boxed edition, third part of The Enemy Within campaign', '1-869893-10-7', '1987-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(10, 'Warhammer City', 1, 2, 2, 'Middenheim sourcebook', '1-869893-24-7', '1987-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(11, 'Power Behind the Throne', 1, 2, 2, 'fourth part of The Enemy Within campaign', '1-869893-43-3', '1988-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(12, 'Death on the Reik', 1, 2, 2, 'republished as a hardback', '', '1988-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(13, 'Warhammer Campaign', 1, 2, 2, 'hardback collection of The Enemy Within and Shadows over Bögenhafen', '', '1988-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(14, 'Something Rotten in Kislev', 1, 2, 2, 'fifth part of The Enemy Within campaign', '1-869893-56-5', '1988-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(15, 'Relam of Chaos: Slaves to Darkness', 1, 2, 2, 'first of the two Realm of Chaos volumes, joint WFRP/WFB/WH40K hardback supplement', '1-869893-51-4', '1988-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(16, 'The Restless Dead', 1, 2, 2, 'collection of scenarios previous published in White Dwarf magazine', '1-869893-73-5', '1989-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(17, 'Warhammer Adventure', 1, 2, 2, 'collection of the first three parts of The Enemy Within campaign', '1-872372-22-8', '1989-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(18, 'Warhammer City of Chaos', 1, 2, 2, 'collection of Warhammer City and Power Behind the Throne', '1-872372-41-4)', '1989-12-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(19, 'The Empire in Flames', 1, 2, 2, 'sixth part of the Enemy Within Campaign', '1-872372-08-2', '1989-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(20, 'Realm of Chaos: The Lost and the Damned', 1, 2, 2, '2nd volume of the joint WFRP/WFB/WH40K supplement, hardback', '1-869893-52-2', '1989-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 --  Stuff Addition from Flame Publications
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `Description`, `ISBN`, `Date`, `CreationDate`, `UpdateDate`) VALUES
-(21, 'Fire in the Mountians', 1, 4, 1, 1, 1, 'The Doomstones Campaign part 1', '1-872372-14-7', '1990-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(22, 'Lichemaster', 1, 4, 1, 1, 1, 'a redesigned scenario pack from the second edition of Warhammer Fantasy Battle', '1-872372-01-5', '1990-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(23, 'Blood in Darkness', 1, 4, 1, 1, 1, 'The Doomstones Campaign part 2', '1-872372-23-6', '1990-10-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(24, 'Character Pack', 1, 4, 1, 1, 1, '1st edition – 1st edition of the character pack, not the game as a whole', '', '1990-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(25, 'Warhammer Companion', 1, 4, 1, 1, 1, 'A Grimoire of arcane knowledge, collection of scenarios and additional rules', '', '1990-05-13', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(26, 'Death Rock', 1, 4, 1, 1, 1, 'The Doomstones Campaign part 3', '1-872372-24-4', '1990-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(27, 'Dwarf Wars', 1, 4, 1, 1, 1, 'The Doomstones Campaign part 4', '', '1990-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(28, 'Death\'s Dark Shadow', 1, 4, 1, 1, 1, 'scenario pack', '', '1991-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(29, 'Castle Drachenfels', 1, 4, 1, 1, 1, 'scenario pack based on Jack Yeovil\'s novel Drachenfels', '', '1992-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(30, 'Character Pack 2nd', 1, 4, 1, 1, 1, '2nd printing – 2nd edition of the character pack, not the game as a whole', '', '1992-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `PublisherId`, `Description`, `ISBN`, `Date`, `CreationDate`, `UpdateDate`) VALUES
+(21, 'Fire in the Mountians', 1, 4, 4, 'The Doomstones Campaign part 1', '1-872372-14-7', '1990-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(22, 'Lichemaster', 1, 4, 4, 'a redesigned scenario pack from the second edition of Warhammer Fantasy Battle', '1-872372-01-5', '1990-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(23, 'Blood in Darkness', 1, 4, 4, 'The Doomstones Campaign part 2', '1-872372-23-6', '1990-10-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(24, 'Character Pack', 1, 4, 1, 4'1st edition – 1st edition of the character pack, not the game as a whole', '', '1990-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(25, 'Warhammer Companion', 1, 4, 4, 'A Grimoire of arcane knowledge, collection of scenarios and additional rules', '', '1990-05-13', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(26, 'Death Rock', 1, 4, 4, 'The Doomstones Campaign part 3', '1-872372-24-4', '1990-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(27, 'Dwarf Wars', 1, 4, 4, 'The Doomstones Campaign part 4', '', '1990-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(28, 'Death\'s Dark Shadow', 1, 4, 4, 'scenario pack', '', '1991-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(29, 'Castle Drachenfels', 1, 4, 4, 'scenario pack based on Jack Yeovil\'s novel Drachenfels', '', '1992-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(30, 'Character Pack 2nd', 1, 4, 4, '2nd printing – 2nd edition of the character pack, not the game as a whole', '', '1992-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 --  Stuff Addition from Hogshead Publishing
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `Description`, `ISBN`, `Date`, `CreationDate`, `UpdateDate`) VALUES
-(31, 'Warhammer Fantasy Roleplay', 1, 5, 1, 1, 1, 'softcover reprint', '1-899749-01-2', '1995-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(32, 'The Enemy Within Campaign volume 1: Shadows over Bögenhafen', 1, 5, 1, 1, 1, 'reprint of Warhammer Campaign', '1-899749-02-0', '1995-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(33, 'Apocrypha Now', 1, 5, 1, 1, 1, 'additional rules', '1-899749-03-9', '1995-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(34, 'The Dying of the Light', 1, 5, 1, 1, 1, 'scenario pack', '1-899749-04-7', '1995-06-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(35, 'The Doomstones Campaign volume 1: Fire and Blood', 1, 5, 1, 1, 1, 'collection of Fire in the Mountains and Blood in Darkness', '1-899749-09-8', '1996-08-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(36, 'The Enemy Within Campaign volume 2: Death on the Reik', 1, 5, 1, 1, 1, 'reprint', '1-899749-07-1', '1996-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(37, 'GM\'s Screen & Reference Pack', 1, 5, 1, 1, 1, '', '1-899749-08-X', '1997-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(38, 'The Doomstones Campaign volume 2: Wars & Death', 1, 5, 1, 1, 1, 'collection of Death Rock and Dwarf Wars, with three new pages', '1-899749-10-1', '1997-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(39, 'Middenheim: City of Chaos', 1, 5, 1, 1, 1, 'reprint of Warhammer City', '1-899749-12-8', '1998-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(40, 'The Enemy Within Campaign volume 3: Power Behind the Throne', 1, 5, 1, 1, 1, 'reprint with a new 14-page prologue', '1-899749-11-X', '1998-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(41, 'The Enemy Within Campaign volume 4: Something Rotten in Kislev', 1, 5, 1, 1, 1, 'reprint', '1-899749-19-5', '1999-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(42, 'Marienburg: Sold Down the River', 1, 5, 1, 1, 1, 'Marienburg sourcebook', '1-899749-14-4', '1999-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(43, 'Apocrypha 2: Chart of Darkness', 1, 5, 1, 1, 1, 'additional rules', '1-899749-17-9', '2000-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(44, 'Death\'s Dark Shadow', 1, 5, 1, 1, 1, 'reprint', '1-899749-27-6', '2001-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(45, 'The Doomstones Campaign volume 3: Heart of Chaos', 1, 5, 1, 1, 1, 'a new fifth part for the Doomstones campaign', '1-899749-16-0', '2001-08-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(46, 'Realms of Sorcery', 1, 5, 1, 1, 1, 'magic sourcebook', '1-899749-33-0', '2001-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(47, 'Corrupting Influence: The Best of Warpstone', 1, 5, 1, 1, 1, 'compilation of articles from Warpstone magazine', '1-899749-34-9', 'Mar 25 2002', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(48, 'Dwarfs: Stone and Steel', 1, 5, 1, 1, 1, 'Dwarf sourcebook', '1-899749-28-4', '2002-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
-(49, 'Fear the Worst', 1, 5, 1, 1, 1, 'PDF only, free adventure as a so long and thank you', '', '2002-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(50, 'Bad Tidings', 1, 5, 1, 1, 1, 'PDF version of the adventure in Hogwash 4', '', '2002-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `PublisherId`, `Description`, `ISBN`, `Date`, `CreationDate`, `UpdateDate`) VALUES
+(31, 'Warhammer Fantasy Roleplay', 1, 5, 5, 'softcover reprint', '1-899749-01-2', '1995-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(32, 'The Enemy Within Campaign volume 1: Shadows over Bögenhafen', 1, 5, 5, 'reprint of Warhammer Campaign', '1-899749-02-0', '1995-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(33, 'Apocrypha Now', 1, 5, 5, 'additional rules', '1-899749-03-9', '1995-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(34, 'The Dying of the Light', 1, 5, 5, 'scenario pack', '1-899749-04-7', '1995-06-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(35, 'The Doomstones Campaign volume 1: Fire and Blood', 1, 5, 5, 'collection of Fire in the Mountains and Blood in Darkness', '1-899749-09-8', '1996-08-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(36, 'The Enemy Within Campaign volume 2: Death on the Reik', 1, 5, 5, 'reprint', '1-899749-07-1', '1996-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(37, 'GM\'s Screen & Reference Pack', 1, 5, 5, '', '1-899749-08-X', '1997-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(38, 'The Doomstones Campaign volume 2: Wars & Death', 1, 5, 5, 'collection of Death Rock and Dwarf Wars, with three new pages', '1-899749-10-1', '1997-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(39, 'Middenheim: City of Chaos', 1, 5, 5, 'reprint of Warhammer City', '1-899749-12-8', '1998-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(40, 'The Enemy Within Campaign volume 3: Power Behind the Throne', 1, 5, 5, 'reprint with a new 14-page prologue', '1-899749-11-X', '1998-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(41, 'The Enemy Within Campaign volume 4: Something Rotten in Kislev', 1, 5, 5, 'reprint', '1-899749-19-5', '1999-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(42, 'Marienburg: Sold Down the River', 1, 5, 5, 'Marienburg sourcebook', '1-899749-14-4', '1999-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(43, 'Apocrypha 2: Chart of Darkness', 1, 5, 5, 'additional rules', '1-899749-17-9', '2000-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(44, 'Death\'s Dark Shadow', 1, 5, 5, 'reprint', '1-899749-27-6', '2001-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(45, 'The Doomstones Campaign volume 3: Heart of Chaos', 1, 5, 5, 'a new fifth part for the Doomstones campaign', '1-899749-16-0', '2001-08-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(46, 'Realms of Sorcery', 1, 5, 5, 'magic sourcebook', '1-899749-33-0', '2001-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(47, 'Corrupting Influence: The Best of Warpstone', 1, 5, 5, 'compilation of articles from Warpstone magazine', '1-899749-34-9', 'Mar 25 2002', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(48, 'Dwarfs: Stone and Steel', 1, 5, 5, 'Dwarf sourcebook', '1-899749-28-4', '2002-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
+(49, 'Fear the Worst', 1, 5, 5, 'PDF only, free adventure as a so long and thank you', '', '2002-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(50, 'Bad Tidings', 1, 5, 5, 'PDF version of the adventure in Hogwash 4', '', '2002-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 
 -- Images

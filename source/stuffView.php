@@ -5,6 +5,7 @@ include('includes/config.php');
 include('dbfunc/stuff.php');
 include('dbfunc/category.php');
 include('dbfunc/author.php');
+include('dbfunc/publisher.php');
 include('dbfunc/condition.php');
 include('dbfunc/status.php');
 include('dbfunc/owner.php');
@@ -54,6 +55,7 @@ if (isset($_GET['id'])) {
                     <img src=/catalog/imageView.php?id=<?php echo getFirstImageIDByStuff($_GET['id']);?>>
     </td>
     <td>
+                    <b>Publiasher:</b> <a href=browseby.php?type=publisher&id=<?php echo $result->PublisherId;?>><?php echo htmlentities(getPublisher($result->PublisherId));?></a> <br>
                     <b>Author:</b>    <a href=browseby.php?type=author&id=<?php echo $result->AuthorId;?>><?php echo htmlentities(getAuthor($result->AuthorId));?></a> <br>
                     <b>ISBN:</b>      <?php echo htmlentities($result->ISBN);?><br>
                     <b>Publish Date:</b>  <?php echo htmlentities($result->Date);?><br>

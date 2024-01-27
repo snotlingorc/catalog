@@ -5,8 +5,7 @@ include('../includes/config.php');
 include('../dbfunc/stuff.php');
 include('../dbfunc/category.php');
 include('../dbfunc/author.php');
-include('../dbfunc/condition.php');
-include('../dbfunc/status.php');
+include('../dbfunc/publisher.php');
 include('../dbfunc/owner.php');
 include('../dbfunc/image.php');
 
@@ -18,9 +17,7 @@ if(strlen($_SESSION['alogin'])==0) {
         $title=$_POST['stuff'];
         $catID=intval($_POST['CatId']);
         $AuthorID=intval($_POST['AuthorId']);
-        $ConditionID=intval($_POST['ConditionId']);
-        $StatusID=intval($_POST['StatusId']);
-        $OwnerID=intval($_POST['OwnerId']);
+        $PublisherID=intval($_POST['{PublisherId']);
         $Description=$_POST['Description'];
         $ISBN=$_POST['ISBN'];
         $Date=$_POST['Date'];
@@ -28,7 +25,7 @@ if(strlen($_SESSION['alogin'])==0) {
             $Date = "0000-00-00";
         }
 
-        updateStuff($id, $title, $catID, $AuthorID, $ConditionID, $StatusID, $OwnerID, $ISBN, $Date, $Description);    
+        updateStuff($id, $title, $catID, $AuthorID, $PublisherID, $ISBN, $Date, $Description);    
         $_SESSION['updatemsg']="Stuff updated successfully";
         header('location:stuffManage.php'); 
     }
@@ -103,6 +100,22 @@ foreach($results as $result)
 </select>
 </div>
 <div class="form-group">
+<label>Publisher</label>
+<select name="PublisherId" id="PublisherId">
+<?php 
+ $PublisherResults=getAllPublisher();
+ foreach($PublisherResults as $PublisherResult) {
+    if ($PublisherResult->id == $result->PublisherId) {
+        echo "<option Value=\"" . htmlentities($PublisherResult->id) . "\" Selected>" . htmlentities($PublisherResult->Name) . "</option>\n";
+    } else {
+        echo "<option Value=\"" . htmlentities($PublisherResult->id) . "\">" . htmlentities($PublisherResult->Name) . "</option>\n";
+    }
+ }
+?>
+</select>
+</div>
+
+<div class="form-group">
 <label>Author</label>
 <select name="AuthorId" id="AuthorId">
 <?php 
@@ -112,51 +125,6 @@ foreach($results as $result)
         echo "<option Value=\"" . htmlentities($AuthorResult->id) . "\" Selected>" . htmlentities($AuthorResult->Name) . "</option>\n";
     } else {
         echo "<option Value=\"" . htmlentities($AuthorResult->id) . "\">" . htmlentities($AuthorResult->Name) . "</option>\n";
-    }
- }
-?>
-</select>
-</div>
-<div class="form-group">
-<label>Condition</label>
-<select name="ConditionId" id="ConditionId">
-<?php 
- $ConditionResults=getAllCondition();
- foreach($ConditionResults as $ConditionResult) {
-    if ($ConditionResult->id == $result->ConditionId) {
-        echo "<option Value=\"" . htmlentities($ConditionResult->id) . "\" Selected>" . htmlentities($ConditionResult->Name) . "</option>\n";
-    } else {
-        echo "<option Value=\"" . htmlentities($ConditionResult->id) . "\">" . htmlentities($ConditionResult->Name) . "</option>\n";
-    }
- }
-?>
-</select>
-</div>
-<div class="form-group">
-<label>status</label>
-<select name="StatusId" id="StatusId">
-<?php 
- $StatusResults=getAllStatus();
- foreach($StatusResults as $StatusResult) {
-    if ($StatusResult->id == $result->StatusId) {
-        echo "<option Value=\"" . htmlentities($StatusResult->id) . "\" Selected>" . htmlentities($StatusResult->Name) . "</option>\n";
-    } else {
-        echo "<option Value=\"" . htmlentities($StatusResult->id) . "\">" . htmlentities($StatusResult->Name) . "</option>\n";
-    }
- }
-?>
-</select>
-</div>
-<div class="form-group">
-<label>Owner</label>
-<select name="OwnerId" id="OwnerId">
-<?php 
- $OwnerResults=getAllOwner();
- foreach($OwnerResults as $OwnerResult) {
-    if ($OwnerResult->id == $result->OwenerId) {
-        echo "<option Value=\"" . htmlentities($OwnerResult->id) . "\" Selected>" . htmlentities($OwnerResult->Name) . "</option>\n";
-    } else {
-        echo "<option Value=\"" . htmlentities($OwnerResult->id) . "\">" . htmlentities($OwnerResult->Name) . "</option>\n";
     }
  }
 ?>

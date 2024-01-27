@@ -18,6 +18,15 @@
                                     </ul>
                             </li>
                             <li>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Publishers <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                                <?php $Results=getAllPublisher();
+                                    foreach($Results as $result) { ?>
+                                           <li role="presentation"><a role="menuitem" tabindex="-1" href="browseby.php?type=publisher&id=<?php echo $result->id; ?>"><?php echo htmlentities(getPublisher($result->id)); ?></a></li>
+                                        <?php } ?>
+                                </ul>
+                            </li>
+                            <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Authors <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                 <?php $Results=getAllAuthor();

@@ -7,6 +7,7 @@ include('dbfunc/category.php');
 include('dbfunc/condition.php');
 include('dbfunc/status.php');
 include('dbfunc/author.php');
+include('dbfunc/publisher.php');
 include('dbfunc/tags.php');
 include('dbfunc/image.php');
 

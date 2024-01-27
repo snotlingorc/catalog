@@ -2,34 +2,21 @@
 session_start();
 error_reporting(1);
 include('../includes/config.php');
-include('../dbfunc/stuff.php');
-include('../dbfunc/category.php');
-include('../dbfunc/author.php');
 include('../dbfunc/publisher.php');
-include('../dbfunc/condition.php');
-include('../dbfunc/status.php');
-include('../dbfunc/owner.php');
-
 if(strlen($_SESSION['alogin'])==0) {   
     header('location:../adminlogin.php');
 } else { 
     if(isset($_POST['create'])) {
-        $title=$_POST['stuff'];
-        $catID=intval($_POST['CatId']);
-        $PublisherID=intval($_POST['PublisherId']);
-        $AuthorID=intval($_POST['AuthorId']);
-        $Description=$_POST['Description'];
-        $ISBN=$_POST['ISBN'];
-        $Date=$_POST['Date'];
-
-        $lastInsertId = newStuff($title, $catID, $AuthorID, $PublisherID, $ISBN, $Date, $Description);
+        $name=$_POST['publisher'];
+        $URL=$_POST['url'];
+        $lastInsertId = newPublisher($name, $URL);
         if($lastInsertId) {
-            $_SESSION['msg']="Stuff Listed successfully";
-            header('location:stuffEdit.php?id='.$lastInsertId);
+            $_SESSION['msg']="Publisher Listed successfully";
+            header('location:publisherManage.php');
         } else {
             $_SESSION['error']="Something went wrong. Please try again";
-            header('location:stuffEdit.php?id='.$lastInsertId);
-        } 
+            header('location:publisherManage.php');
+        }
 
     }
 ?>
@@ -40,7 +27,7 @@ if(strlen($_SESSION['alogin'])==0) {
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Catalog | Add Catalog Item</title>
+    <title>Catalog | Add Publishers</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -60,7 +47,7 @@ if(strlen($_SESSION['alogin'])==0) {
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Add Item to the Catalog</h4>
+                <h4 class="header-line">Add Publisher</h4>
                 
                             </div>
 
@@ -69,61 +56,17 @@ if(strlen($_SESSION['alogin'])==0) {
 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3"">
 <div class="panel panel-info">
 <div class="panel-heading">
-Catalog Info
+Publisher/Creator Info
 </div>
 <div class="panel-body">
 <form role="form" method="post">
 <div class="form-group">
-<label>Name/Title</label>
-<input class="form-control" type="text" name="stuff" autocomplete="off" maxlength="250" required />
-</div>
-
-<div class="form-group">
-<label>Category</label>
-<select name="CatId" id="CatId">
-<?php 
- $results=getAllCategory();
- foreach($results as $result) {
-    echo "<option Value=\"" . htmlentities($result->id) . "\">" . htmlentities($result->Name) . "</option>\n";
- }
-?>
-</select>
+<label>Name</label>
+<input class="form-control" type="text" name="publisher" autocomplete="off" maxlength="150" required />
 </div>
 <div class="form-group">
-<label>Publisher</label>
-<select name="PublisherId" id="PublisherId">
-<?php 
- $results=getAllPublisher();
- foreach($results as $result) {
-    echo "<option Value=\"" . htmlentities($result->id) . "\">" . htmlentities($result->Name) . "</option>\n";
- }
-?>
-</select>
-</div>
-<div class="form-group">
-<label>Author</label>
-<select name="AuthorId" id="AuthorId">
-<?php 
- $results=getAllAuthor();
- foreach($results as $result) {
-    echo "<option Value=\"" . htmlentities($result->id) . "\">" . htmlentities($result->Name) . "</option>\n";
- }
-?>
-</select>
-</div>
-
-<div class="form-group">
-<label>ISBN</label>
-<input class="form-control" type="text" name="ISBN" autocomplete="off" maxlength="50" required />
-</div>
-<div class="form-group">
-<label>Date</label>
-<input class="form-control" type="text" name="Date" autocomplete="off" maxlength="50" required />
-</div>
-
-<div class="form-group">
-<label>Description</label>
-<input class="form-control" type="text" name="Description" autocomplete="off" maxlength="5000" required />
+<label>URL</label>
+<input class="form-control" type="text" name="url" autocomplete="off" maxlength="150" required />
 </div>
 </label>
 </div>

@@ -2,27 +2,15 @@
 session_start();
 error_reporting(1);
 include('../includes/config.php');
-include('../dbfunc/stuff.php');
-include('../dbfunc/category.php');
-include('../dbfunc/author.php');
 include('../dbfunc/publisher.php');
-include('../dbfunc/condition.php');
-include('../dbfunc/status.php');
-include('../dbfunc/owner.php');
-include('../dbfunc/image.php');
-include('../dbfunc/tagassociation.php');
-
-
 if(strlen($_SESSION['alogin'])==0) {   
     header('location:../adminlogin.php');
 } else { 
     if(isset($_GET['del'])) {
         $id=$_GET['del'];
-        delStuff($id);
-        delImageByStuff($id);
-        delAssociationbyStuff($id);
-        $_SESSION['delmsg']="Stuff deleted scuccessfully ";
-        header('location:stuffManage.php');
+        delPublisher($id);
+        $_SESSION['delmsg']="Publisher deleted scuccessfully ";
+        header('location:publisherManage.php');
     }
 
     ?>
@@ -33,7 +21,7 @@ if(strlen($_SESSION['alogin'])==0) {
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Catalog | Manage Catalog Items</title>
+    <title>Catalog | Manage Publishers</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -54,7 +42,7 @@ if(strlen($_SESSION['alogin'])==0) {
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Manage Catalog Items</h4>
+                <h4 class="header-line">Manage Publishers/Creators</h4>
     </div>
      <div class="row">
     <?php if($_SESSION['error']!="")
@@ -109,7 +97,7 @@ if(strlen($_SESSION['alogin'])==0) {
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           Catlog Listing
+                           Publisher/Creator Listing
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -117,11 +105,8 @@ if(strlen($_SESSION['alogin'])==0) {
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Title</th>
-                                            <th>Category</th>
-                                            <th>Publisher</th>
-                                            <th>Author</th>
-                                            <th>Description</th>
+                                            <th>Name</th>
+                                            <th>URL</th>
                                             <th>Creation Date</th>
                                             <th>Last Updated</th>
                                             <th>Action</th>
@@ -129,7 +114,7 @@ if(strlen($_SESSION['alogin'])==0) {
                                     </thead>
                                     <tbody>
 <?php 
-$results = getAllStuff();
+$results = getAllPublisher();
 $cnt=1;
 //if($query->rowCount() > 0)
 //{
@@ -137,17 +122,14 @@ foreach($results as $result)
 {               ?>                                      
                                         <tr class="odd gradeX">
                                             <td class="center"><?php echo htmlentities($cnt);?></td>
-                                            <td class="center"><?php echo htmlentities($result->Title);?></td>
-                                            <td class="center"><?php echo htmlentities(getCategory($result->CatId));?></td>
-                                            <td class="center"><?php echo htmlentities(getPublisher($result->PublisherId));?></td>
-                                            <td class="center"><?php echo htmlentities(getAuthor($result->AuthorId));?></td>
-                                            <td class="center"><?php echo htmlentities($result->Description);?></td>
+                                            <td class="center"><?php echo htmlentities($result->Name);?></td>
+                                            <td class="center"><?php echo htmlentities($result->URL);?></td>
                                             <td class="center"><?php echo htmlentities($result->CreationDate);?></td>
                                             <td class="center"><?php echo htmlentities($result->UpdateDate);?></td>
                                             <td class="center">
 
-                                            <a href="stuffEdit.php?id=<?php echo htmlentities($result->id);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 
-                                            <a href="stuffManage.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');"" >  <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
+                                            <a href="publisherEdit.php?catid=<?php echo htmlentities($result->id);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 
+                                          <a href="publisherManage.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');"" >  <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
                                             </td>
                                         </tr>
  <?php $cnt=$cnt+1;}//} ?>                                      

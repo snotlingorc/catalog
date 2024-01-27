@@ -4,7 +4,7 @@
 -- --------------------------------------------------------
 --
 -- Author additions
-INSERT INTO `authors` (`id`, `Name`, `URL`, `creationDate`, `UpdateDate`) VALUES
+INSERT INTO `publishers` (`id`, `Name`, `URL`, `creationDate`, `UpdateDate`) VALUES
 (6, 'Black Industries', 'https://en.wikipedia.org/wiki/Black_Industries', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (7, 'Fantasy Flight Games','https://www.fantasyflightgames.com/en/index/', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (8, 'Cubicle 7', 'https://cubicle7games.com/', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
@@ -16,16 +16,16 @@ INSERT INTO `tags` (`id`, `Name`, `CreationDate`, `UpdateDate`) VALUES
 (13, 'Warhammer FRP 4th edition', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 --  Stuff Addition from Black Industires, 2nd edition of whfrp
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
-(3, 'Apocrypha Now', 1, 6, 1, 1, 1, 'additional rules', '', '1995-01-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `PublisherId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
+(3, 'Book 1', 1, 6, 6, 'Description goes here', '', '1995-01-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 
 --  Stuff Addition from Fantasy Flight Games, 2nd edition of whfrp
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
-(3, 'Apocrypha Now', 1, 6, 1, 1, 1, 'additional rules', '', '1995-01-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `PublisherId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
+(3, 'Book 2', 1, 6, 6, 'Description goes here', '', '1995-01-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 
 --  Stuff Addition from Cubicle 7, 4th edition of whfrp
-INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `ConditionId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
-(3, 'Apocrypha Now', 1, 6, 1, 1, 1, 'additional rules', '', '1995-01-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `PublisherId`, `StatusId`, `OwnerId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
+(3, 'Book 3', 1, 6, 6, 'Description goes here', '', '1995-01-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 
 
 -- Images
