@@ -9,8 +9,7 @@ function getOwnerAssociationByStuff(int $id) {
     $query = $pdo -> prepare($stmt);
     $query->execute();
     $results = $query->fetchAll(PDO::FETCH_OBJ);
-    $json = json_encode($results);
-    return $json;
+    return $results;
 }
 
 function getOwnerAssociationByFormat(int $id) {
@@ -82,7 +81,7 @@ function getOAOwnerByStuff(int $id) {
 function newOwnerAssociation(int $stuffID, int $ownerID, int $formatID, int $statusID, int $conditionID) {
     include(__DIR__ . '/../includes/config.php');
     $creationDate = date("Y-m-d H:i:s");
-    $stmt = "INSERT INTO `OwnerAssociation` ( `stuffid`, `ownerid` `formatid` `statusid` `conditionid`) VALUES ('$stuffID', '$ownerID', '$formatID', '$statusID', '$conditionID');";
+    $stmt = "INSERT INTO `ownerAssociation` ( `stuffid`, `ownerid`, `formatid`, `statusid`, `conditionid`) VALUES ('$stuffID', '$ownerID', '$formatID', '$statusID', '$conditionID');";
     $query = $pdo -> prepare($stmt);
     $query->execute();
 }

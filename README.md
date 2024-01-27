@@ -44,11 +44,9 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 - Additional image types. Currently on png, gif and jpg are valid.  webp is pretty common.
 - Image from url - Need to move this to a function and add in some better error checking and gracefully error out if invalid type
 #### Owner
-- User signup/login - Do we need this? (google login/Oauth support?)
+- User signup/login - Do we need this? (google login/Oauth support?) 
 - Owner adminstration? allow multiple owners to a single item (instead of duplicate items) - perhaps users as owners?
--- move owner flags to it's own table (condition, status, owner)
 #### Stuff
-- format (hardcover, softcover, pdf) - In Progress
 - add product line - would that replace the tags?
 #### Misc
 - Rating System??

@@ -45,7 +45,7 @@ function getOwnerValues(int $id) {
 function newOwner(String $name) {
     include(__DIR__ . '/../includes/config.php');
     $creationDate = date("Y-m-d H:i:s");
-    $stmt = "INSERT INTO `owner` ( `Name`, `RegDate`, `UpdateDate`) VALUES (:name, '$creationDate', '$creationDate');";
+    $stmt = "INSERT INTO `owner` ( `Name`, `creationDate`, `UpdateDate`) VALUES (:name, '$creationDate', '$creationDate');";
     $query = $pdo -> prepare($stmt);
     $query->bindParam(":name", $name);
     $query->execute();

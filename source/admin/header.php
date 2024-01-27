@@ -84,6 +84,13 @@
                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="tagManage.php">Manage Tags</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Owner <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="ownerAdd.php">Add Owner</a></li>
+                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="ownerManage.php">Manage Owners</a></li>
+                                </ul>
+                            </li>
                             <li><a href="change-password.php">Change Password</a></li>
                         </ul>
                     </div>

@@ -7,6 +7,10 @@ include('../dbfunc/category.php');
 include('../dbfunc/author.php');
 include('../dbfunc/publisher.php');
 include('../dbfunc/owner.php');
+include('../dbfunc/status.php');
+include('../dbfunc/condition.php');
+include('../dbfunc/format.php');
+include('../dbfunc/ownerassociation.php');
 include('../dbfunc/image.php');
 
 if(strlen($_SESSION['alogin'])==0) {   
@@ -159,6 +163,41 @@ foreach($results as $result)
    
     </div>
     </div>
+
+    <!-- Owner Section -->
+<div class="row">
+<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3"">
+<div class="panel panel-info">
+<div class="panel-heading">
+<a href="oaAdd.php?id=<?php echo htmlentities($id);?>"><button class="btn btn-primary"><i class="fa fa-image "></i>Add Owner</button></a>
+</div>
+<div class="panel-body">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+            <thead>
+                <tr><th>ID</th><th>Owner</th><th>Status</th><th>Condition</th><th>Format</th></tr>
+            </thead>
+            <tbody>
+<?php $results = getOwnerAssociationByStuff($id);  foreach ($results as $result) {  ?>
+    <tr>
+        <td><a href="oaManage.php?del=<?php echo htmlentities($result->id)?>&sid=<?php echo htmlentities($id);?>" onclick="return confirm('Are you sure you want to delete?');"" >  <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button></td>
+        <td><?php echo htmlentities(getOwner($result->ownerid)); ?></td>
+        <td><?php echo htmlentities(getStatus($result->statusid)); ?></td>
+        <td><?php echo htmlentities(getCondition($result->conditionid)); ?></td>
+        <td><?php echo htmlentities(getFormat($result->formatid));?> </td>
+    </tr>  
+<?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- End Owner Section -->
 
 <!-- Image Section -->
 <div class="row">
