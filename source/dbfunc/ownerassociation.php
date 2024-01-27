@@ -84,6 +84,7 @@ function newOwnerAssociation(int $stuffID, int $ownerID, int $formatID, int $sta
     $stmt = "INSERT INTO `ownerAssociation` ( `stuffid`, `ownerid`, `formatid`, `statusid`, `conditionid`) VALUES ('$stuffID', '$ownerID', '$formatID', '$statusID', '$conditionID');";
     $query = $pdo -> prepare($stmt);
     $query->execute();
+    return $pdo->lastInsertId();
 }
 
 function delOwnerAssociationbyOwnerStuff(int $stuffID, int $ownerID) {
