@@ -1,5 +1,6 @@
 <?php
 session_start(); 
+error_reporting(0);
 $_SESSION = array();
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();

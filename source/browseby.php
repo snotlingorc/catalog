@@ -1,6 +1,6 @@
 <?php
 session_start();
-error_reporting(1);
+error_reporting(0);
 
 include('dbfunc/image.php');
 include('includes/config.php');

@@ -33,7 +33,6 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 - Tagging support
 - CSS work - see if the css will allow for dynamic build of the table instead of forcing 5 cells wide
 - Logo
-- error_reporting(1) to 0 - and finish adding to pages
 - Image system look and feel need to match the rest
 - stuffView look and feel need to match the rest
 
@@ -44,8 +43,8 @@ https://github.com/kumarpandule/Online-Library-Management-System-PHP
 - Additional image types. Currently on png, gif and jpg are valid.  webp is pretty common.
 - Image from url - Need to move this to a function and add in some better error checking and gracefully error out if invalid type
 #### Owner
-- User signup/login - Do we need this? (google login/Oauth support?) 
-- Owner adminstration? allow multiple owners to a single item (instead of duplicate items) - perhaps users as owners?
+- User/owner signup/login - Do we need this? (google login/Oauth support?) 
+- - https://codeshack.io/implement-google-login-php/
 #### Stuff
 - add product line - would that replace the tags?
 #### Misc

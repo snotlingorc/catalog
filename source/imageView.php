@@ -1,4 +1,6 @@
 <?php
+session_start();
+error_reporting(0);
 include('dbfunc/image.php');
 
 if (isset($_GET['id'])) {

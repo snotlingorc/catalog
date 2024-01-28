@@ -1,6 +1,6 @@
 <?php
 session_start();
-error_reporting(1);
+error_reporting(0);
 include('includes/config.php');
 include('dbfunc/stuff.php');
 include('dbfunc/category.php');
