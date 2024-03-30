@@ -21,11 +21,12 @@ if(strlen($_SESSION['alogin'])==0) {
         $formatID=intval($_POST['FormatId']);
         $statusID=intval($_POST['StatusId']);
         $conditionID=intval($_POST['ConditionId']);
+        $price=floatval($_POST['Price']);
 
         //echo var_dump($_GET);
         //echo var_dump($_POST);
 
-        $lastInsertId = newOwnerAssociation($stuffID, $ownerID, $formatID, $statusID, $conditionID);
+        $lastInsertId = newOwnerAssociation($stuffID, $ownerID, $formatID, $statusID, $conditionID, $price);
         if($lastInsertId) {
             $_SESSION['msg']="Association Listed successfully";
             header('location:stuffEdit.php?id='.$stuffID);
@@ -123,6 +124,12 @@ Owner Association Info
  }
 ?>
 </select>
+</div>
+
+
+<div class="form-group">
+<label>Price</label>
+<input class="form-control" type="text" name="Price" autocomplete="off" maxlength="250" required />
 </div>
 
 

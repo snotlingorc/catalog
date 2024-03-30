@@ -205,14 +205,15 @@ CREATE TABLE `ownerAssociation` (
   `ownerid` int(11) NOT NULL,
   `formatid` int(11) NOT NULL,
   `statusid` int(11) NOT NULL,
-  `conditionid` int(11) NOT NULL
+  `conditionid` int(11) NOT NULL,
+  `price` decimal(8, 2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `ownerAssociation` (`id`, `stuffid`, `ownerid`, `formatid`, `statusid`, `conditionid`) VALUES
-(1, 1, 1, 1, 1, 2),
-(2, 1, 1, 3, 1, 1),
-(3, 2, 1, 1, 1, 2),
-(5, 2, 1, 3, 1, 2);
+INSERT INTO `ownerAssociation` (`id`, `stuffid`, `ownerid`, `formatid`, `statusid`, `conditionid`, `price`) VALUES
+(1, 1, 1, 1, 1, 2, 0),
+(2, 1, 1, 3, 1, 1, 0),
+(3, 2, 1, 1, 1, 2, 0),
+(5, 2, 1, 3, 1, 2, 0);
 
 ALTER TABLE `ownerAssociation`
   ADD PRIMARY KEY (`id`);

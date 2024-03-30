@@ -175,7 +175,7 @@ foreach($results as $result)
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
             <thead>
-                <tr><th>ID</th><th>Owner</th><th>Status</th><th>Condition</th><th>Format</th></tr>
+                <tr><th>ID</th><th>Owner</th><th>Status</th><th>Condition</th><th>Format</th><th>Cost</th></tr>
             </thead>
             <tbody>
 <?php $results = getOwnerAssociationByStuff($id);  foreach ($results as $result) {  ?>
@@ -185,6 +185,8 @@ foreach($results as $result)
         <td><?php echo htmlentities(getStatus($result->statusid)); ?></td>
         <td><?php echo htmlentities(getCondition($result->conditionid)); ?></td>
         <td><?php echo htmlentities(getFormat($result->formatid));?> </td>
+        <td><?php echo htmlentities($result->price);?> </td>
+
     </tr>  
 <?php } ?>
             </tbody>
