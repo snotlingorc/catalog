@@ -20,13 +20,13 @@ INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `PublisherId`, `Descrip
 (9, 'Death on the Reik', 1, 2, 2, 'boxed edition, third part of The Enemy Within campaign', '1-869893-10-7', '1987-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (10, 'Warhammer City', 1, 2, 2, 'Middenheim sourcebook', '1-869893-24-7', '1987-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (11, 'Power Behind the Throne', 1, 2, 2, 'fourth part of The Enemy Within campaign', '1-869893-43-3', '1988-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(12, 'Death on the Reik', 1, 2, 2, 'republished as a hardback', '', '1988-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(12, 'Death on the Reik', 1, 2, 2, 'republished as a hardback', '1-869893-10-7', '1988-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (13, 'Warhammer Campaign', 1, 2, 2, 'hardback collection of The Enemy Within and Shadows over Bögenhafen', '', '1988-09-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (14, 'Something Rotten in Kislev', 1, 2, 2, 'fifth part of The Enemy Within campaign', '1-869893-56-5', '1988-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (15, 'Relam of Chaos: Slaves to Darkness', 1, 2, 2, 'first of the two Realm of Chaos volumes, joint WFRP/WFB/WH40K hardback supplement', '1-869893-51-4', '1988-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (16, 'The Restless Dead', 1, 2, 2, 'collection of scenarios previous published in White Dwarf magazine', '1-869893-73-5', '1989-05-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (17, 'Warhammer Adventure', 1, 2, 2, 'collection of the first three parts of The Enemy Within campaign', '1-872372-22-8', '1989-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(18, 'Warhammer City of Chaos', 1, 2, 2, 'collection of Warhammer City and Power Behind the Throne', '1-872372-41-4)', '1989-12-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(18, 'Warhammer City of Chaos', 1, 2, 2, 'collection of Warhammer City and Power Behind the Throne', '1-872372-41-4', '1989-12-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (19, 'The Empire in Flames', 1, 2, 2, 'sixth part of the Enemy Within Campaign', '1-872372-08-2', '1989-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
 (20, 'Realm of Chaos: The Lost and the Damned', 1, 2, 2, '2nd volume of the joint WFRP/WFB/WH40K supplement, hardback', '1-869893-52-2', '1989-03-25', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 

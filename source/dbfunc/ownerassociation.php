@@ -78,10 +78,10 @@ function getOAOwnerByStuff(int $id) {
     return $results;
 }
 
-function newOwnerAssociation(int $stuffID, int $ownerID, int $formatID, int $statusID, int $conditionID) {
+function newOwnerAssociation(int $stuffID, int $ownerID, int $formatID, int $statusID, int $conditionID, float $price) {
     include(__DIR__ . '/../includes/config.php');
     $creationDate = date("Y-m-d H:i:s");
-    $stmt = "INSERT INTO `ownerAssociation` ( `stuffid`, `ownerid`, `formatid`, `statusid`, `conditionid`) VALUES ('$stuffID', '$ownerID', '$formatID', '$statusID', '$conditionID');";
+    $stmt = "INSERT INTO `ownerAssociation` ( `stuffid`, `ownerid`, `formatid`, `statusid`, `conditionid`, `price`) VALUES ('$stuffID', '$ownerID', '$formatID', '$statusID', '$conditionID', '$price');";
     $query = $pdo -> prepare($stmt);
     $query->execute();
     return $pdo->lastInsertId();

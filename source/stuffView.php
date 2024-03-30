@@ -57,32 +57,29 @@ if (isset($_GET['id'])) {
                     <img src=/catalog/imageView.php?id=<?php echo getFirstImageIDByStuff($_GET['id']);?>>
     </td>
     <td>
-                    <b>Publiasher:</b> <a href=browseby.php?type=publisher&id=<?php echo $result->PublisherId;?>><?php echo htmlentities(getPublisher($result->PublisherId));?></a> <br>
+                    <b>Publisher:</b> <a href=browseby.php?type=publisher&id=<?php echo $result->PublisherId;?>><?php echo htmlentities(getPublisher($result->PublisherId));?></a> <br>
                     <b>Author:</b>    <a href=browseby.php?type=author&id=<?php echo $result->AuthorId;?>><?php echo htmlentities(getAuthor($result->AuthorId));?></a> <br>
                     <b>ISBN:</b>      <?php echo htmlentities($result->ISBN);?><br>
                     <b>Publish Date:</b>  <?php echo htmlentities($result->Date);?><br>
-                    <b>Formats:</b>  <?php $OAFResults=getOAFormatByStuff($_GET['id']);
-                                    foreach($OAFResults as $oafresult) { ?>
-                                           <?php echo htmlentities(getFormat($oafresult->formatid)); ?> 
-                                        <?php } ?>
-                    <!-- <a href=browseby.php?type=format&id=<?php //echo $result->FormatId;?>><?php //echo htmlentities(getFormat($result->FormatId));?></a> --> <br>
-
                     <b>Category:</b>  <a href=browseby.php?type=category&id=<?php echo $result->CatId;?>><?php echo htmlentities(getCategory($result->CatId));?></a> <br>
-                    <b>Condition:</b> <?php $OACResults=getOAConditionByStuff($_GET['id']);
-                                    foreach($OACResults as $oacresult) { ?>
-                                           <?php echo htmlentities(getCondition($oacresult->conditionid)); ?> 
-                                        <?php } ?>
-                    <!-- <a href=browseby.php?type=condition&id=<?php //echo $result->ConditionId;?>><?php //echo htmlentities(getCondition($result->ConditionId));?></a>  --> <br>
-                    <b>Status:</b>    <?php $OASResults=getOAStatusByStuff($_GET['id']);
-                                    foreach($OASResults as $oasresult) { ?>
-                                           <?php echo htmlentities(getStatus($oasresult->statusid)); ?> 
-                                        <?php } ?>
-                                        <!-- <a href=browseby.php?type=status&id=<?php //echo $result->StatusId;?>><?php //echo htmlentities(getStatus($result->StatusId));?></a> --> <br>
-                    <p>
-                    <b>Owner(s):</b>  <?php $OAOResults=getOAOwnerByStuff($_GET['id']);
-                                    foreach($OAOResults as $oaoresult) { ?>
-                                           <?php echo htmlentities(getOwner($oaoresult->ownerid)); ?> 
-                                        <?php } ?><!-- <a href=browseby.php?type=owner&id=<?php //echo $result->OwnerId;?>><?php //echo htmlentities(getOwner($result->OwnerId));?></a> --> <br>
+    </td>
+    <td>
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <tr><th>Name</th><th>Format</th><th>Status</th><th>Condition</th><th>Cost</th></tr>
+<?php 
+$ownerresults = getOwnerAssociationByStuff($_GET['id']);
+foreach($ownerresults as $ownerresult)
+{        ?>                                      
+                            <tr class="odd gradeX">
+                                <td class="center"><?php echo htmlentities(getOwner($ownerresult->ownerid));?></td>
+                                <td class="center"><?php echo htmlentities(getFormat($ownerresult->formatid));?></td>
+                                <td class="center"><?php echo htmlentities(getStatus($ownerresult->statusid));?></td>
+                                <td class="center"><?php echo htmlentities(getCondition($ownerresult->conditionid));?></td>
+                                <td class="center"><?php echo htmlentities($ownerresult->price);?></td>
+                            </tr>
+ <?php } ?>                                      
+                        </tbody>
+                    </table>
     </td></tr>
     <tr><td colspan=2>
                     <?php echo htmlentities($result->Description);?>
