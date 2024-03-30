@@ -129,7 +129,7 @@ Owner Association Info
 
 <div class="form-group">
 <label>Price</label>
-<input class="form-control" type="text" name="Price" autocomplete="off" maxlength="250" required />
+<input class="form-control" type="text" name="Price" autocomplete="off" size="10" maxlength="10" required />
 </div>
 
 
