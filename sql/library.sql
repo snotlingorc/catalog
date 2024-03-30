@@ -3,13 +3,15 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 --
 -- Database: `catalog`
+CREATE DATABASE IF NOT EXISTS `catalog` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `catalog`;
 --
 -- --------------------------------------------------------
 --
 -- Table structure for table `stuff`
 --
 
-CREATE TABLE `stuff` (
+CREATE TABLE IF NOT EXISTS `stuff` (
   `id` int(11) NOT NULL,
   `Title` varchar(255) DEFAULT NULL,
   `CatId` int(11) DEFAULT NULL,
@@ -39,7 +41,7 @@ ALTER TABLE `stuff`
 -- Table structure for table `category`
 --
 
-CREATE TABLE `category` (
+CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL,
   `Name` varchar(150) DEFAULT NULL,
   `Status` int(1) DEFAULT NULL,
@@ -64,7 +66,7 @@ ALTER TABLE `category`
 -- Table structure for table `authors`
 --
 
-CREATE TABLE `authors` (
+CREATE TABLE IF NOT EXISTS `authors` (
   `id` int(11) NOT NULL,
   `Name` varchar(159) DEFAULT NULL,
   `URL` varchar(159) DEFAULT NULL,
@@ -87,7 +89,7 @@ ALTER TABLE `authors`
 -- Table structure for table `publisher`
 --
 
-CREATE TABLE `publishers` (
+CREATE TABLE IF NOT EXISTS `publishers` (
   `id` int(11) NOT NULL,
   `Name` varchar(159) DEFAULT NULL,
   `URL` varchar(159) DEFAULT NULL,
@@ -111,7 +113,7 @@ ALTER TABLE `publishers`
 -- Table structure for table `condition`
 --
 
-CREATE TABLE `condition` (
+CREATE TABLE IF NOT EXISTS `condition` (
   `id` int(11) NOT NULL,
   `Name` varchar(159) DEFAULT NULL,
   `creationDate` timestamp NULL DEFAULT current_timestamp(),
@@ -136,7 +138,7 @@ ALTER TABLE `condition`
 -- Table structure for table `status`
 --
 
-CREATE TABLE `status` (
+CREATE TABLE IF NOT EXISTS `status` (
   `id` int(11) NOT NULL,
   `Name` varchar(159) DEFAULT NULL,
   `creationDate` timestamp NULL DEFAULT current_timestamp(),
@@ -159,7 +161,7 @@ ALTER TABLE `status`
 -- Table structure for table `status`
 --
 
-CREATE TABLE `format` (
+CREATE TABLE IF NOT EXISTS `format` (
   `id` int(11) NOT NULL,
   `Name` varchar(159) DEFAULT NULL,
   `creationDate` timestamp NULL DEFAULT current_timestamp(),
@@ -183,15 +185,15 @@ ALTER TABLE `format`
 -- Table structure for table `owner`
 --
 
-CREATE TABLE `owner` (
+CREATE TABLE IF NOT EXISTS `owner` (
   `id` int(11) NOT NULL,
   `Name` varchar(159) DEFAULT NULL,
-  `creationDate` timestamp NULL DEFAULT current_timestamp(),
-  `UpdateDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+  `email` varchar(100) NOT NULL,
+  `picture` varchar(255) NOT NULL,
+  `registered` datetime NOT NULL,
+  `method` enum('facebook','google','linkedin') NOT NULL,
+  `admin` boolean DEFAULT false
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO `owner` (`id`, `Name`, `CreationDate`, `UpdateDate`) VALUES
-(1, 'Snotling', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 ALTER TABLE `owner`
   ADD PRIMARY KEY (`id`);
@@ -225,7 +227,7 @@ ALTER TABLE `ownerAssociation`
 -- Table structure for table `tags`
 --
 
-CREATE TABLE `tags` (
+CREATE TABLE IF NOT EXISTS `tags` (
   `id` int(11) NOT NULL,
   `Name` varchar(159) DEFAULT NULL,
   `creationDate` timestamp NULL DEFAULT current_timestamp(),
@@ -249,7 +251,7 @@ ALTER TABLE `tags`
 ALTER TABLE `tags`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
-CREATE TABLE `tagAssociation` (
+CREATE TABLE IF NOT EXISTS `tagAssociation` (
   `stuffid` int(11) NOT NULL,
   `tagid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -262,7 +264,7 @@ INSERT INTO `tagAssociation` (`stuffid`, `tagid`) VALUES
 --
 -- Table structure for table `image`
 --
-CREATE TABLE `image` (
+CREATE TABLE IF NOT EXISTS `image` (
   `id` int(11) NOT NULL,
   `stuffid` int(11) NOT NULL,
   `imageType` varchar(255) NOT NULL,

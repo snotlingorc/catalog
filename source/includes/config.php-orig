@@ -1,4 +1,9 @@
 <?php 
+// OAUTH Information
+$google_oauth_client_id = 'CLIENT_ID';
+$google_oauth_client_secret = 'CLIENT_SECRET';
+$google_oauth_redirect_uri = 'http://localhost/catalog/google-oauth.php';
+$google_oauth_version = 'v3';
 // DB credentials.
 $servername = "localhost";
 $username = "catalog";
