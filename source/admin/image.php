@@ -58,6 +58,13 @@ if(strlen($_SESSION['alogin'])==0) {
                     imagepng($target_layer);
                     $imgData = ob_get_contents();
                     ob_end_clean();
+                } elseif ($image_type == IMAGETYPE_WEBP) {
+                    $image_resource_id = imagecreatefromwebp($file);
+                    $target_layer = fn_resize($image_resource_id, $source_properties[0], $source_properties[1]);
+                    ob_start();
+                    imagewebp($target_layer);
+                    $imgData = ob_get_contents();
+                    ob_end_clean();
                 }
             }
         }
