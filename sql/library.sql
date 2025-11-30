@@ -24,8 +24,8 @@ CREATE TABLE `stuff` (
 
 
 INSERT INTO `stuff` (`id`, `Title`, `CatId`, `AuthorId`, `PublisherId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
-(1, 'Core RuleBook', 1, 1, 1, 'Pathfinder 2E Core Rulebook', '978-1-64078-169-6', '2019-08-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
-(2, 'Bestiary', 1, 1, 1, 'Pathfinder 2E Bestiary', '978-1-64078-170-2', '2019-08-01', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
+(1, 'Core RuleBook', 1, 1, 1, '978-1-64078-169-6', '2019-08-01', 'Pathfinder 2E Core Rulebook', '2023-07-22 12:00:00', '2023-07-22 12:00:00'),
+(2, 'Bestiary', 1, 1, 1, '978-1-64078-170-2', '2019-08-01', 'Pathfinder 2E Bestiary', '2023-07-22 12:00:00', '2023-07-22 12:00:00');
 
 ALTER TABLE `stuff`
   ADD PRIMARY KEY (`id`);
@@ -44,7 +44,7 @@ CREATE TABLE `category` (
   `Name` varchar(150) DEFAULT NULL,
   `Status` int(1) DEFAULT NULL,
   `CreationDate` timestamp NULL DEFAULT current_timestamp(),
-  `UpdateDate` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp()
+  `UpdateDate` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `category` (`id`, `Name`, `Status`, `CreationDate`, `UpdateDate`) VALUES
@@ -291,7 +291,7 @@ CREATE TABLE `administrator` (
   `Email` varchar(120) DEFAULT NULL,
   `UserName` varchar(100) NOT NULL,
   `Password` varchar(100) NOT NULL,
-  `updateDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp()
+  `updateDate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `administrator` (`id`, `Name`, `Email`, `UserName`, `Password`, `UpdateDate`) VALUES
