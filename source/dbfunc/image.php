@@ -2,17 +2,16 @@
 declare(strict_types=1);
 date_default_timezone_set("America/Denver");
 
+
 function newImage(int $id, String $imgType, String $imgData) {
-    // TODO figure out why this cannot be in the same format as the other DB calls
-   // include(__DIR__ . '/../includes/config.php');
-
-    $conn = mysqli_connect("localhost", "catalog", "yourpasswordhere", "catalog");
-
-    $sql = "INSERT INTO image(imageType ,imageData, stuffId) VALUES(?, ?, $id)";
-    $pdo = $conn->prepare($sql);
-    $pdo->bind_param('ss', $imgType, $imgData);
-    //$current_id = $statement->execute() or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_connect_error());
-    $pdo->execute();
+    include(__DIR__ . '/../includes/config.php');
+    $stmt = "INSERT INTO image (`imageType`, `imageData`, `stuffid`) VALUES(:imgType, :imgData, :stuffid)";
+    $query = $pdo -> prepare($stmt);
+    $query->bindParam(":imgType", $imgType);
+    $query->bindParam(":imgData", $imgData);
+    $query->bindParam(":stuffid", $id);
+    $query->execute();
+    return $pdo->lastInsertId();
 }
 
 function getImage(int $id) {
@@ -26,7 +25,7 @@ function getImage(int $id) {
 
 function getFirstImageByStuff(int $id) {
     include(__DIR__ . '/../includes/config.php');
-    $stmt = "SELECT * FROM `image` WHERE stuffId=$id LIMIT 1;";
+    $stmt = "SELECT * FROM `image` WHERE stuffid=$id LIMIT 1;";
     $query = $pdo -> prepare($stmt);
     $query->execute();
     $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -35,13 +34,13 @@ function getFirstImageByStuff(int $id) {
 
 function getFirstImageIDByStuff(int $id) {
     include(__DIR__ . '/../includes/config.php');
-    $stmt = "SELECT id FROM `image` WHERE stuffId=$id LIMIT 1;";
+    $stmt = "SELECT id FROM `image` WHERE stuffid=$id LIMIT 1;";
     $query = $pdo -> prepare($stmt);
     $query->execute();
     $results = $query->fetchAll(PDO::FETCH_OBJ);
-    if($query->rowCount() > 0) {
+    if ($query->rowCount() > 0) {
         foreach($results as $result) {
-            $value = htmlentities($result->id);
+            $value = (string)($result->id);
         }
     } 
     return $value;
@@ -49,7 +48,7 @@ function getFirstImageIDByStuff(int $id) {
 
 function getAllImagesByStuff(int $id) {
     include(__DIR__ . '/../includes/config.php');
-    $stmt = "SELECT * FROM `image` WHERE stuffId=$id;";
+    $stmt = "SELECT * FROM `image` WHERE stuffid=$id;";
     $query = $pdo -> prepare($stmt);
     $query->execute();
     $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -65,9 +64,15 @@ function delImage(int $id) {
 
 function delImageByStuff(int $id) {
     include(__DIR__ . '/../includes/config.php');
-    $stmt = "DELETE FROM `image` WHERE stuffId=$id;";
+    $stmt = "DELETE FROM `image` WHERE stuffid=$id;";
     $query = $pdo -> prepare($stmt);
     $query->execute();
 }
 
 // TODO update image
+//
+
+//echo "<br>Running getImage with 3 <br>";
+//echo getImage(3);
+//echo "<br>Running getFirstImageIDByStuff with 3 <br>";
+//echo getFirstImageIDByStuff(3);

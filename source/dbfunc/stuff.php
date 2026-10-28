@@ -32,7 +32,7 @@ function newStuff(String $title, int $catID, int $AuthorID, int $PublisherID, st
     include(__DIR__ . '/../includes/config.php');
     $creationDate = date("Y-m-d H:i:s");
     $stmt = "INSERT INTO `stuff` (`Title`, `CatId`, `AuthorId`, `PublisherId`, `ISBN`, `Date`, `Description`, `CreationDate`, `UpdateDate`) VALUES
-    (:title, '$catID', '$AuthorID', '$PublisherID', :isbn, :date :desc, '$creationDate', '$creationDate')";
+    (:title, '$catID', '$AuthorID', '$PublisherID', :isbn, :date, :desc, '$creationDate', '$creationDate')";
     $query = $pdo -> prepare($stmt);
     $query->bindParam(":title", $title);
     $query->bindParam(":isbn", $ISBN);

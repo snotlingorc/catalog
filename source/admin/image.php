@@ -106,10 +106,14 @@ if(strlen($_SESSION['alogin'])==0) {
                 imagewebp($target_layer);
                 $imgData = ob_get_contents();
                 ob_end_clean();
-            }
+	    } else {
+		   echo "unknown image type found: $imgType";
+	    }
+	     
         $id=intval($_GET['id']);
 
-        newImage($id, $source_properties[mime], $imgData);
+        //newImage($id, $source_properties[mime], $imgData);
+        newImage($id, $imgType, $imgData);
         $_SESSION['updatemsg']="Image added successfully";
         header('location:stuffEdit.php?id='.$id);
 
